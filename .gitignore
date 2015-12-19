@@ -3,7 +3,7 @@ app/config/parameters.yml
 
 vendor
 app/bootstrap.php.cache
-web/bundles/
+#web/bundles/
 app/cache/*
 app/logs/*
 build/
