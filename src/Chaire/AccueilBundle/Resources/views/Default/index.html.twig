@@ -1,0 +1,262 @@
+{% extends '::layout.html.twig' %}
+{% block menu %}
+    {%  include ':parts:navbaraccueil.html.twig' %}
+{% endblock %}
+
+
+{% block content %}
+
+
+    <div class="container-fluid">
+        {% for flashMessage in app.session.flashbag.get('notice') %}
+        <div class="row pad">
+        <div class="col-xs-offset-4 col-xs-4">
+        <div class="alert alert-success" role="alert">
+
+            <div class="flash-notice">
+                {{ flashMessage }}
+            </div>
+
+        </div>
+        </div>
+        </div>
+        {% endfor %}
+        {% for flashMessage in app.session.flashbag.get('error') %}
+        <div class="row pad">
+            <div class="col-xs-offset-4 col-xs-4">
+                <div class="alert alert-danger" role="alert">
+
+                        <div class="flash-notice">
+                            {{ flashMessage }}
+                        </div>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {# video manifesto #}
+        <div   class="row pad">
+
+                <div style="position:relative;">
+            <img id="manifesto" class="img_center" src="{{ asset('bundles/chaireaccueil/images/image_video_manifesto.jpg') }}"/>
+                </div>
+
+
+            <img id="youtube"  data-toggle="modal" data-target="#myModal"  src="{{ asset('bundles/chaireaccueil/images/PLAY_BUTTON.png') }}"/>
+            </div>
+
+
+
+        </div>
+
+    <br>
+
+
+
+
+        {# nos actvite titre #}
+        <div class="row pad">
+            <div class="col-md-offset-4 col-md-4 titlefp">
+
+
+                <div class="text_center">
+                    <img style="display:inline;" src="{{ asset('bundles/chaireaccueil/images/tiret.png') }}"/>
+
+                    <span style="" class="text_center">
+                    {% trans %}welcome.ourActivities{% endtrans %}
+                    </span>
+                    <img style="display:inline;" src="{{ asset('bundles/chaireaccueil/images/tiret.png') }}"/>
+
+                </div>
+            </div>
+        </div>
+
+    <style>
+
+
+        .titlefp{
+
+            font-family: "DINPro-CondBold";
+            color: rgb(48,54,61);
+            font-size: 30px;
+        }
+
+        .firstpage h3{
+            padding-top: 0px;
+            margin-top:10px;
+            font-size:32px;
+        }
+
+
+        .firstpage a:hover{
+            text-decoration: none;
+        }
+
+        .bigfour:hover{
+            background-color: lightgrey;
+        }
+
+
+    </style>
+
+        {# nos activite liens #}
+        <div class="row ">
+
+            <div class="col-md-offset-3 col-md-6 firstpage">
+                <div class="row">
+                    <div class=" col-md-6 bigfour">
+                        <a href="{{ path('chaire_event_homepage') }}">
+                        <img class="img_center activite"
+                             src="{{ asset('bundles/chaireaccueil/images/evenement.png') }}"/>
+                            <h3 class="text_center">{% trans %}welcome.event{% endtrans %}</h3>
+                        </a>
+
+                    </div>
+                    <div class=" col-md-6 bigfour">
+                        <a href="{{ path('chaire_formation_homepage') }}">
+                        <img class="img_center activite"
+                             src="{{ asset('bundles/chaireaccueil/images/formation.png') }}"/>
+                            <h3 class="text_center">{% trans %}welcome.formation{% endtrans %}</h3>
+                        </a>
+
+                    </div>
+                    <div class=" col-md-6 bigfour">
+                        <a href="{{ path('accompagnement') }}">
+                        <img class="img_center activite"
+                             src="{{ asset('bundles/chaireaccueil/images/accompagenement.png') }}"/>
+                            <h3 class="text_center">{% trans %}welcome.acc{% endtrans %}</h3>
+                        </a>
+
+                    </div>
+                    <div class=" col-md-6 bigfour">
+                        <a href="">
+                        <img class="img_center activite"
+                             src="{{ asset('bundles/chaireaccueil/images/recherche.png') }}"/>
+                            <h3 class="text_center">{% trans %}welcome.recherche{% endtrans %}</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        {# En ce moment titre #}
+    <div class="row pad">
+        <div class="col-md-offset-4 col-md-4 titlefp">
+
+
+            <div class="text_center">
+                <img style="display:inline;" src="{{ asset('bundles/chaireaccueil/images/tiret.png') }}"/>
+
+                    <span style="" class="text_center">
+                    {% trans %}welcome.now{% endtrans %}
+                    </span>
+                <img style="display:inline;" src="{{ asset('bundles/chaireaccueil/images/tiret.png') }}"/>
+
+            </div>
+        </div>
+    </div>
+
+
+
+        {# En ce moment liens #}
+        <div class="row pad">
+
+            <div class="col-md-offset-2 col-md-8">
+                <div class="row">
+                    {% for highlight in highlights %}
+
+                        <a href="{{ highlight.Link }}">
+                        <div class=" col-md-4">
+                            <img class="img_center highlight_img"
+                                 src="{{ asset('uploads/img/highlight/'~highlight.photolink) }}"/>
+                            <h3 class="text_center">{{ highlight.title }} </h3>
+                           <p class="text_center med-blue  baseline"> {{highlight.baseline }}</p>
+                        </div>
+                        </a>
+                    {% endfor %}
+
+
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+        {# En ce moment titre #}
+        <div class="row pad">
+            <div class="col-md-offset-4 col-md-4">
+                <h2 class="text_center">
+
+                </h2>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+    <!-- Modal Video -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <button id="close_video" type="button" class="close" data-dismiss="modal" aria-label="Close">{% trans %}welcome.close{% endtrans %} <span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel"></h4>
+                    </br>
+                </div>
+                <div class="modal-body">
+                    <iframe id="video_youtube" width="100%" height="600" src="" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+//alert($( window ).width());
+
+
+        $('#youtube').click(function(){
+                    $('#video_youtube').attr('src','https://www.youtube.com/embed/ZmeC0SgouWc?autoplay=1');
+                } );
+
+        $('#close_video').click(function(){
+             $('#video_youtube').attr('src','');
+} );
+
+    </script>
+
+
+    <style>
+
+ .line-abs{
+     width:50px;
+     border-top:1px solid black ;
+
+
+}
+
+        .baseline{
+            font-size:18px;
+        }
+
+
+    </style>
+
+{% endblock %}
+

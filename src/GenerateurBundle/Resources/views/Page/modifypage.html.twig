@@ -1,0 +1,62 @@
+{% extends '::layout.html.twig' %}
+{% block menu %}
+    {%  include ':parts:navbaradmin.html.twig' %}
+{% endblock %}
+
+
+{% block content %}
+
+
+    <div class="container-fluid">
+        <div style="padding-top:100px; " class="row ">
+
+            <div class="col-md-offset-4 col-md-4">
+
+                <img class="img_center"  src="http://s3.amazonaws.com/foundum-com-uploads/organization_account_image_uploads/6985/images/medium/LogoChaireEEE_newEY-04.png?1384167185"/>
+
+            </div>
+
+        </div>
+        <div class="row pad">
+
+            <div class="col-md-offset-3 col-md-6">
+                {{ form(form) }}
+
+                <br>
+                <a href="{{ path('generateur_edit_photo_from_page',{'idpicture':page.logo.id  ,'idpage':page.id }) }}"> Modifier le logo</a>
+                <br>
+                <a href="{{ path('generateur_edit_photo_from_page',{'idpicture':page.homie.id ,'idpage':page.id }) }}"> Modifier background</a>
+
+            </div>
+
+
+
+        </div>
+
+        <div class="row ">
+            <div class="col-md-offset-5 col-md-2">
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+

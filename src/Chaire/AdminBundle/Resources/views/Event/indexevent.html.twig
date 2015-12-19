@@ -1,0 +1,89 @@
+{% extends '::layout.html.twig' %}
+{% block menu %}
+    {%  include ':parts:navbaradmin.html.twig' %}
+{% endblock %}
+
+
+{% block content %}
+
+
+    <div class="container-fluid">
+        <div style="padding-top:100px; " class="row ">
+
+            <div class="col-md-offset-4 col-md-4">
+
+                <img class="img_center"  src="http://s3.amazonaws.com/foundum-com-uploads/organization_account_image_uploads/6985/images/medium/LogoChaireEEE_newEY-04.png?1384167185"/>
+
+            </div>
+
+        </div>
+        <div class="row pad">
+
+            <div class="text_center col-md-6">
+                <div class="adminbutton">
+
+
+
+
+
+                    <a href={{ path('chaire_admin_addEvent') }}>{% trans %}index.event.add{% endtrans %}  </a>
+                </div>
+            </div>
+            <div class=" text_center col-md-6">
+                <div class="adminbutton">
+                    <a href={{ path('chaire_admin_viewEvent') }}>{% trans %}index.event.view{% endtrans %}</a>
+                </div>
+            </div>
+            <div class=" text_center col-md-6">
+                <div class="adminbutton">
+                    <a href={{ path('chaire_admin_addFrise') }}>{% trans %}index.event.frise.add{% endtrans %}</a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <style>
+        .adminbutton{
+            background-color: rgb(47,76,143);
+            padding-right: 30px;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            border:solid 3px rgb(47,76,143);
+        }
+
+        .adminbutton a{
+            color:white;
+        }
+
+        .adminbutton:hover{
+            background-color: white;
+            border:solid 3px rgb(47,76,143);
+            padding-right: 30px;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+        .adminbutton:hover a {
+            color:rgb(47,76,143);
+        }
+
+    </style>
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+

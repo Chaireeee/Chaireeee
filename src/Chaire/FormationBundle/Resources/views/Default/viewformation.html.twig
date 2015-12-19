@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{  text[52
+    ] }}">
+    <meta name="author" content="{{  text[53] }}">
+    <title> {{  text[0] }}</title>
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <!-- Latest compiled and minified CSS -->
+
+    <link rel="stylesheet" href={{ asset('public/css/bootstrap.css') }} >
+
+
+    <link rel="stylesheet" href={{ asset('public/css/styleonepage.css') }} >
+
+
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<!-- Fixed navbar -->
+<div class="navbar  navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+
+
+        </div>
+        <div class="navbar-collapse navbar-default collapse">
+            <ul class="nav navbar-nav">
+                <li><a data-scroll href="{{ path('chaire_accueil_homepage') }}"><img style="width:90px;" src="{{ asset('bundles/chaireaccueil/images/logo_chairEEE_header.png') }}" width="210" ></a></li>
+                <li><a data-scroll href="#top"><img style="width:150px;" src="{{ asset('uploads/img/'~formation.logopage.id~'.'~formation.logopage.url) }}" width="210" ></a></li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a data-scroll href="#pourqui">{{  text[1] }}</a></li>
+
+                <li><a data-scroll href="#intercalprogramme">{{  text[2] }}</a></li>
+                <li><a data-scroll href="#intercalpourquoi">{{  text[3] }}</a></li>
+                <li><a data-scroll href="#apply">{{  text[4] }}</a></li>
+                <li><a data-scroll href="#info">{{  text[5] }}</a></li>
+
+                <!-- <li><a href="http://www.made-in-escpeurope.eu/EN"><button type="button" class="btn btn-default btn-xs">In english</button></a></li> -->
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</div>
+
+
+<!-- HOME SCREEN -->
+<div class="homie" id="top">
+    <!--  <a data-scroll href="#intercalgrandjury"><img class="img-responsive reza" src="MadeInreza-27.png" width="120"></a> -->
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 textcenter whitetext">
+            <p><br><br><br><br><br><br><br>
+                <img class=" img_center img-responsive img-front" src="{{ asset('uploads/img/'~formation.logoblanc.id~'.'~formation.logoblanc.url) }}">
+
+            <p class="textcenter">
+
+
+            <h3>{{  text[6] }}</h3>
+            <br>{{  text[7] }}<br>{{  text[8] }}</p><br>
+            <a data-scroll href="#apply">
+                <button type="button" class="btn btn-default btn-md ">{{  text[9] }}</button>
+            </a>
+        </div>
+
+
+    </div>
+    <div class="col-md-4"><br><br><br><br><br><br></div>
+
+</div>
+
+
+
+<!-- CONCEPT -->
+<div class="pourqui" id="pourqui">
+    <div class="container">
+        <div class="row">
+
+        </div>
+
+        <div class="row">
+            <div class="container">
+                <br><br>
+                <div class="col-md-12">
+                    <img class="img-responsive " src="{{ asset('uploads/img/'~formation.pourqui.id~'.'~formation.pourqui.url) }}">
+
+                </div>
+                <h3>{{  text[10] }}</h3>
+                <br>
+                <ul>
+                    {% if text[44] !="OPTIONE.list1"  %}<li> {{  text[44] }} </li>{% endif %}
+                    {% if text[45] !="OPTIONE.list2"  %}<li> {{  text[45] }} </li>{% endif %}
+                    {% if text[46] !="OPTIONE.list3"  %}<li> {{  text[46] }} </li>{% endif %}
+                    {% if text[47] !="OPTIONE.list4"  %}<li> {{  text[47] }} </li>{% endif %}
+                    {% if text[48] !="OPTIONE.list5"  %}<li> {{  text[48] }} </li>{% endif %}
+                    {% if text[49] !="OPTIONE.list6"  %}<li> {{  text[49] }} </li>{% endif %}
+                    {% if text[50] !="OPTIONE.list7"  %}<li> {{  text[50] }} </li>{% endif %}
+                    {% if text[51] !="OPTIONE.list8"  %}<li> {{  text[51] }} </li>{% endif %}
+
+
+                </ul>
+                <p class="textcenter">
+                    {{  text[11] }}
+                    <br><strong>{{  text[12] }}</strong>
+
+                </p>
+                <br><br>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+<!-- INTERCAL 3-5 -->
+
+<div class="intercalprogramme" id="intercalprogramme">
+
+</div>
+
+<!-- Atelier -->
+<div class="grandjury" id="grandjury">
+    <div class="container">
+        <div class="container">
+            <br><br>
+            <h3 class="textcenter">{{  text[13] }}</h3>
+            <br>
+            <p class="textcenter">{{  text[14] }}<br> <strong>{{  text[15] }}</strong><br><br>
+                <a href="{{ asset('uploads/img/'~formation.syllabus.id~'.'~formation.syllabus.url) }}" ><button type="button" class="btn btn-default btn-xs">{{  text[16] }}</button></a>
+                <br><br><span class="glyphicon glyphicon-chevron-down"></span>
+
+            </p>
+            <h3 class="textcenter">{{  text[17] }}</h3>
+            <br>
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-2">
+                    <img src="{{ asset('uploads/img/'~formation.pointprogramme1.id~'.'~formation.pointprogramme1.url) }}" class="img-responsive">
+                </div>
+                <div class="col-md-2">
+                    <img src="{{ asset('uploads/img/'~formation.pointprogramme2.id~'.'~formation.pointprogramme2.url) }}" class="img-responsive">
+                </div>
+                <div class="col-md-2">
+                    <img src="{{ asset('uploads/img/'~formation.pointprogramme3.id~'.'~formation.pointprogramme3.url) }}" class="img-responsive">
+                </div>
+                <div class="col-md-2">
+                    <img src="{{ asset('uploads/img/'~formation.pointprogramme4.id~'.'~formation.pointprogramme4.url) }}" class="img-responsive">
+                </div>
+                <div class="col-md-2">
+                    <img src="{{ asset('uploads/img/'~formation.pointprogramme5.id~'.'~formation.pointprogramme5.url) }}" class="img-responsive">
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+            <br><br><p class="textcenter"><span class="glyphicon glyphicon-chevron-down"></span></p><br>
+            <div class="row">
+                <h3 class="textcenter">{{  text[18] }}</h3>
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <img class="img-responsive" src="{{ asset('uploads/img/'~formation.intensiteprogramme.id~'.'~formation.intensiteprogramme.url) }}">
+                </div>
+                <div class="col-md-3"></div>
+            </div><br>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+<!-- INTERCAL 3 -->
+
+<div class="intercalpourquoi" id="intercalpourquoi">
+
+</div>
+
+<!-- INSCRIPTION GRAND JURY -->
+<div class="grandjury" id="grandjury">
+    <div class="container">
+
+        <div class="container">
+            <br><h3 class="textcenter">{{  text[19] }}</h3><br>
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-5 textcenter">
+                    <img class="img-responsive center-block" src="{{ asset('uploads/img/'~formation.pourquoi1.id~'.'~formation.pourquoi1.url) }}">
+                    <h4> {{  text[20] }}</h4><br>
+                    <p>{{  text[21] }}</p>
+                </div>
+                <div class="col-md-5 textcenter">
+                    <img class="img-responsive center-block" src="{{ asset('uploads/img/'~formation.pourquoi2.id~'.'~formation.pourquoi2.url) }}">
+                    <h4> {{  text[22] }}</h4><br>
+                    <p>{{  text[23] }}</p>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-5 textcenter">
+                    <img class="img-responsive center-block" src="{{ asset('uploads/img/'~formation.pourquoi3.id~'.'~formation.pourquoi3.url) }}">
+                    <h4> {{  text[24] }}</h4><br>
+                    <p>{{  text[25] }}</p>
+
+                </div>
+                <div class="col-md-5 textcenter">
+                    <img class="img-responsive center-block" src="{{ asset('uploads/img/'~formation.pourquoi4.id~'.'~formation.pourquoi4.url) }}">
+                    <h4> {{  text[26] }}</h4><br>
+                    <p>{{  text[27] }}</p>
+                </div>
+                <div class="col-md-1"></div>
+            </div><br><br>
+        </div>
+
+
+
+    </div><br><br>
+</div>
+
+
+
+<!-- INTERCAL 4 -->
+
+
+
+<div class="intercalapply" id="apply" name="apply">
+    <div class="container" style="padding-top: 70px; padding-bottom: 70px;">
+        <div class="jumbotron" style="background-color: white;">
+            <h3 class="textcenter">{{  text[28] }}</h3><br>
+            <a href="{{ text[55] }}" target="_blank"><img src="{{ asset('uploads/img/'~formation.inscription1.id~'.'~formation.inscription1.url) }}" class="img-responsive"></a>
+            <img src="{{ asset('uploads/img/'~formation.inscription2.id~'.'~formation.inscription2.url) }}" class="img-responsive">
+        </div>
+    </div>
+
+</div>
+
+
+
+<!-- Map // INFOS PRATIQUES -->
+<div class="info" id="info">
+    <div class="row">
+
+        <div class="container">
+            <br><br>
+            <h3 class="textcenter">{{  text[29] }}</h3>
+            <br>
+
+            <table class="table">
+                <tbody>
+                <tr>
+
+
+
+                    <td><h3>{{  text[30] }}</h3></td>
+                    <td><strong>{{  text[31] }}</strong><br> {{  text[32] }}
+                    </td>
+                    <td></td>
+                    <td><strong>{{  text[33] }}i</strong>,<br> {{  text[34] }}</td>
+                </tr>
+                <tr>
+                    <td><h3>{{  text[35] }}</h3>
+                    </td>
+                    <td>{{  text[36] }}<a href="{{ text[56] }}" target="_blank"><img class="img-responsive" src="{{ asset('Logo_ChaireEEE_2013-04.png') }}" width="400"></a><small>{{  text[37] }}</small>
+                    </td>
+                </tr>
+                <tr>
+                    <td><h3>{{  text[38] }}</h3>
+                    </td>
+                    <td><address>{{  text[39] }}<br> {{  text[40] }}<br> {{  text[41] }} <a href="mailto:{{  text[42] }}">{{  text[42] }}</a> <br>  {{  text[43] }}</address>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+</div>
+
+<div class="footer">
+    <div class="container">
+        <div class="row"><div class="col-md-1">powered by <a href="{{ text[56] }}" target="_blank"></div><div class="col-md-4"><img src="{{ asset('Logo_ChaireEEE_2013-04.png') }}" class="img-responsive"></a></div><div class="col-md-4"></div>  <div class="col-md-3"> <a href="http://www.nrdwnc.fr"></a>  <a href="mailto:{{ text[42] }}">Contact</a> - <a href="#">Back to top</a></div></div>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/smooth-scroll.js"></script>
+
+<script>
+    smoothScroll.init();
+</script>
+
+
+
+</body>
+</html>
+
+
+
+
+<style>
+
+    .homie {
+        background: url(http://localhost{{ asset('uploads/img/'~formation.fondaccueil.id~'.'~formation.fondaccueil.url) }});
+        min-height: 700px;
+        margin-top: -20px;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+
+        color: white;
+    }
+
+
+    .intercalprogramme {
+        background: url(http://localhost{{ asset('uploads/img/'~formation.fond1.id~'.'~formation.fond1.url) }});
+        min-height: 350px;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: black;
+        text-align: center;
+    }
+
+
+
+    .intercalpourquoi {
+        background: url(http://localhost{{ asset('uploads/img/'~formation.fond2.id~'.'~formation.fond2.url) }});
+        min-height: 350px;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    .intercalapply {
+        background: url(http://localhost{{ asset('uploads/img/'~formation.fond3.id~'.'~formation.fond3.url) }});
+        min-height: 300px;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: black;
+        text-align: center;
+    }
+
+
+
+    .whitetext h5{
+        color:white;
+        font-size:18px;
+    }
+
+    .navbar
+    {
+        background-color:white;
+    }
+    .navbar-default
+    {
+        background-color:white;
+        box-shadow: none;
+        background-image: none;
+    }
+
+    /* texte navbar */
+    .navbar-default .navbar-nav > li > a {
+        font-size:17px;
+    }
+
+    .img-front{
+        max-height: 100%;
+         width:150px;
+    }
+
+
+</style>

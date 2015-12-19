@@ -1,0 +1,131 @@
+{% extends '::layout.html.twig' %}
+{% block menu %}
+    {%  include ':parts:navbar.html.twig' %}
+{% endblock %}
+
+
+{% block content %}
+
+
+
+    {# photo formation #}
+    <div class="row pad">
+
+
+        {% if loc=='en' %}
+            <img id="chaireformation" class="img_center" src="{{ asset('bundles/chaireaccueil/images/recherche_image_eng.png') }}"/>
+        {% else %}
+            <img id="chaireformation" class="img_center" src="{{ asset('bundles/chaireaccueil/images/recherche_image_fr.png') }}"/>
+        {% endif %}
+
+        <
+
+
+    </div>
+
+
+
+
+    <div class="container-fluid">
+    <div class="row pad">
+
+
+    <div class="col-md-offset-2 col-md-8">
+        <p class="text_center " class="baselinetext">
+            {% trans %}recherche.textprincipal{% endtrans %}
+        </p>
+
+    </div>
+
+
+
+    <div class="col-md-offset-2 col-md-8">
+        {# student escp #}
+
+
+
+            {% for res in ress %}
+                <div class="col-md-4">
+
+
+                    {% if loc=='en' %}
+                    {% if res.pageEn is not null %}
+                    <a href="{{ path('generateur_view_page',{id:res.pageEn.id}) }}">
+                        {% else %}
+
+                        {% if res.page is not null%}
+                        <a href="{{ path('generateur_view_page',{id:res.page.id}) }}">
+                            {% endif %}
+
+                            {% endif %}
+                            {% else %}
+                            {% if res.page is not null%}
+                            <a href="{{ path('generateur_view_page',{id:res.page.id}) }}">
+                                {% endif %}
+                                {% endif %}
+
+
+                                <img class="img_center" style=" width:250px;" src="{{ asset(res.Logo.getWebPath()) }}">
+                            </a>
+                            {% if loc=='en' %}
+                                <h4 style="text-align:center;" class="titreitem">{{ res.nameEn }}</h4>
+                            {% else %}
+                                <h4 style="text-align:center;" class="titreitem">{{ res.name }}</h4>
+                            {% endif %}
+                            <p style="text-align:center;">
+
+                                {% if loc=='en' %}
+                                   <h4 class=" text_center">{{ res.conceptEn}}</h4>
+                                {% else %}
+                                    <h4 class=" text_center">{{ res.concept}}</h4>
+                                {% endif %}
+
+                            </p>
+
+
+
+
+                </div>
+            {% endfor %}
+
+
+        {# student  #}
+
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    </div>
+    </div>
+
+
+
+
+    <style>
+
+
+        .img_menu{
+            width:40%;
+        }
+
+        #chaireformation{
+            width:100%;
+        }
+    </style>
+
+
+
+{% endblock %}
+

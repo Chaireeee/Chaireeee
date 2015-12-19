@@ -1,0 +1,158 @@
+generateur_add_page:
+    path:     /add/new/page
+    defaults: { _controller: GenerateurBundle:Page:addnewPage}
+
+generateur_add_slide1_to_page:
+    path:     /add/slide1/{idpage}
+    defaults: { _controller: GenerateurBundle:Stype1:addnewslide}
+
+generateur_edit_slide:
+    path:     /edit/slide/{idslide}/{idpage}
+    defaults: { _controller: GenerateurBundle:Slide:editslide}
+
+generateur_edit1_slide:
+    path:     /edit/slide1/{idslide}/{idpage}
+    defaults: { _controller: GenerateurBundle:Stype1:editslide}
+
+generateur_edit2_slide:
+    path:     /edit/slide2/{idslide}/{idpage}
+    defaults: { _controller: GenerateurBundle:Stype2:editslide}
+
+generateur_edit3_slide:
+    path:     /edit/slide3/{idslide}/{idpage}
+    defaults: { _controller: GenerateurBundle:Stype3:editslide}
+
+generateur_add_slide3_to_page:
+    path:     /add/slide3/{idpage}
+    defaults: { _controller: GenerateurBundle:Stype3:addnewslide}
+
+generateur_edit4_slide:
+    path:     /edit/slide4/{idslide}/{idpage}
+    defaults: { _controller: GenerateurBundle:Stype4:editslide}
+
+generateur_add_slide4_to_page:
+    path:     /add/slide4/{idpage}
+    defaults: { _controller: GenerateurBundle:Stype4:addnewslide}
+
+generateur_edit5_slide:
+    path:     /edit/slide5/{idslide}/{idpage}
+    defaults: { _controller: GenerateurBundle:Stype5:editslide}
+
+generateur_add_slide5_to_page:
+    path:     /add/slide5/{idpage}
+    defaults: { _controller: GenerateurBundle:Stype5:addnewslide}
+
+generateur_edit6_slide:
+    path:     /edit/slide6/{idslide}/{idpage}
+    defaults: { _controller: GenerateurBundle:Stype6:editslide}
+
+generateur_add_slide6_to_page:
+    path:     /add/slide6/{idpage}
+    defaults: { _controller: GenerateurBundle:Stype6:addnewslide}
+
+generateur_edit7_slide:
+    path:     /edit/slide7/{idslide}/{idpage}
+    defaults: { _controller: GenerateurBundle:Stype7:editslide}
+
+generateur_add_slide7_to_page:
+    path:     /add/slide7/{idpage}
+    defaults: { _controller: GenerateurBundle:Stype7:addnewslide}
+
+generateur_edit8_slide:
+    path:     /edit/slide8/{idslide}/{idpage}
+    defaults: { _controller: GenerateurBundle:Stype8:editslide}
+
+generateur_add_slide8_to_page:
+    path:     /add/slide8/{idpage}
+    defaults: { _controller: GenerateurBundle:Stype8:addnewslide}
+
+
+
+generateur_edit_photo:
+    path:     /edit/photo/{idpicture}/{idpage}/{idslide}
+    defaults: { _controller: GenerateurBundle:Slide:editphoto}
+
+
+generateur_add_slide2_to_page:
+    path:     /add/slide2/{idpage}
+    defaults: { _controller: GenerateurBundle:Stype2:addnewslide}
+
+generateur_view_page:
+    path:     /view/page/{id}
+    defaults: { _controller: GenerateurBundle:Page:viewPage}
+
+
+generateur_view_slide_test:
+    path:     /view/slide/test
+    defaults: { _controller: GenerateurBundle:Stype1:viewslide}
+
+generateur_edit_page:
+    path:     /edit/page/{id}
+    defaults: { _controller: GenerateurBundle:Page:editPage}
+
+generateur_choose_slide:
+    path:     /chooseslide/{id}
+    defaults: { _controller: GenerateurBundle:Page:chooseslide}
+
+generateur_delete_slide_from_page:
+    path:     /delete/slide/{id}/{idpage}
+    defaults: { _controller: GenerateurBundle:Slide:deleteslide}
+
+generateur_monter_slide_from_page:
+    path:     /monter/slide/{idslide}/{idpage}
+    defaults: { _controller: GenerateurBundle:Page:monterslide}
+
+generateur_descendre_slide_from_page:
+    path:     /descendre/slide/{idslide}/{idpage}
+    defaults: { _controller: GenerateurBundle:Page:baisserslide}
+
+generateur_add_page_from_event:
+    path:     /add/new/pagefromevent
+    defaults: { _controller: GenerateurBundle:Page:addnewPagefromevent}
+
+generateur_add_page_from_eventEn:
+    path:     /add/new/pagefromeventEn
+    defaults: { _controller: GenerateurBundle:Page:addnewPagefromeventEn}
+
+
+generateur_add_page_from_accompagnement:
+    path:     /add/new/pagefromaccompagnement
+    defaults: { _controller: GenerateurBundle:Page:addnewPagefromaccompagnement}
+
+
+generateur_add_page_from_accompagnementEn:
+    path:     /add/new/pagefromaccompagnementEn
+    defaults: { _controller: GenerateurBundle:Page:addnewPagefromaccompagnementEn}
+
+generateur_add_page_from_formation:
+    path:     /add/new/pagefromformation
+    defaults: { _controller: GenerateurBundle:Page:addnewPagefromformation}
+
+generateur_add_page_from_formationEn:
+    path:     /add/new/pagefromformationEn
+    defaults: { _controller: GenerateurBundle:Page:addnewPagefromformationEn}
+
+generateur_add_page_from_research:
+    path:     /add/new/pagefromresearch
+    defaults: { _controller: GenerateurBundle:Page:addnewPagefromresearch}
+
+generateur_add_page_from_researchEn:
+    path:     /add/new/pagefromresearchEn
+    defaults: { _controller: GenerateurBundle:Page:addnewPagefromresearchEn}
+
+
+
+
+generateur_modify_info_page:
+    path:     /modify/page/{id}
+    defaults: { _controller: GenerateurBundle:Page:modifyPageinfo}
+
+generateur_edit_photo_from_page:
+    path:     /edit/photofrompage/{idpicture}/{idpage}
+    defaults: { _controller: GenerateurBundle:Slide:editphotofrompage}
+
+
+
+
+
+

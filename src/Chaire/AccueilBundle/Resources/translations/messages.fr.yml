@@ -1,0 +1,89 @@
+
+
+welcome.ourActivities: Nos activités
+welcome.now: En ce moment
+welcome.close: Fermer
+
+
+welcome.image.event: bundles/chaireaccueil/images/image_activites.png
+welcome.image.formation:
+welcome.image.help:
+welcome.image.research:
+
+
+welcome.newsletter.title: Vivez et revivez nos moments forts
+welcome.newsletter.title.desc: Inscrivez vous et recevez une fois par mois le programme des événements conçus pour vous, notre actualité pédagogique et suivez les projets accompagnés par notre équipe
+welcome.newsletter.enteremail: Entrez votre adresse mail
+welcome.newsletter.youare: Vous êtes
+welcome.newsletter.promesse.title: Notre Promesse
+welcome.newsletter.promesse: Nous ne communiqueront jamais votre adresse, c'est promis !
+
+
+footer.dontmiss: NE RATEZ RIEN, INSCRIVEZ VOUS A NOTRE NEWSLETTER
+footer.entrepreneur: Entrepreneur
+footer.investor: Investisseur
+footer.student: Etudiant
+footer.corporate: Corporate
+footer.presse: Presse
+footer.academic: Academiques
+footer.discover: DECOUVREZ NOS CAMPUS
+footer.placeholder: Votre Adresse E-mail
+
+
+
+footer.facebook: https://www.facebook.com/chaireentrepreneuriat
+footer.twitter:
+footer.email:
+footer.youtube:
+footer.medium:
+
+
+admin.addevent: Gérer les evenements
+admin.addformation: Gérer les formations
+admin.addteammember: Gérer les membres d'équipe
+admin.addaccompagnement: Gérer les Accompagnements
+
+admin.accompagnement.id: Id
+admin.accompagnement.namenlg: Nom en français
+admin.accompagnement.nameen: Nom en Anglais
+admin.accompagnement.baselinenlg: Baseline en français
+admin.accompagnement.baselineenglish: Baseline en Anglais
+admin.accompagnement.logo: Logo
+admin.accompagnement.image: Photo
+admin.accompagnement.modifylogo : modifier logo
+admin.accompagnement.modifyimage : modifier image
+admin.accompagnement.modifypagenlg : modifier page français
+admin.accompagnement.modifypageen : modifier page Anglais
+
+accompagnement.title: Nos offres d'accompagnement
+accompagnement.text: salut
+
+welcome.event: Evenement
+welcome.acc: Accompagnement
+welcome.recherche: Recherche
+welcome.formation: Formation
+
+
+index.event.add: Ajouter un evenement
+index.event.view: voir et modifier les evenements
+index.event.frise.add: Ajouter une frise temporelle
+
+
+event.textprincipal: salut salut
+event.tocome: Evenements à venir
+event.passed: Evenements Passé
+
+navbar.event: Evenements
+navbar.formation: Formation
+navbar.acc: Accompagnement
+navbar.recherche: Recherche
+navbar.equipe: Equipe ChaireEEE
+navbar.accueil: Accueil
+
+formation.studentescp: Etudiants ESCP Europe
+formation.student: Etudiants hors ESCP
+formation.managers: Managers / Entrepreneur
+formation.textprincipal: La chaire eee propose differents types de formations pour tous
+
+viewteammenber.getback: Revenir à la page équipe
+recherche.textprincipal: recherche

@@ -1,0 +1,39 @@
+chaire_formation_homepage:
+    path:     /formation
+    defaults: { _controller: ChaireFormationBundle:Default:index }
+
+chaire_formation_id:
+    path:     /viewformation/{id}
+    defaults: { _controller: ChaireFormationBundle:Default:viewformation }
+
+chaire_addphoto:
+    path:     /addphoto
+    defaults: { _controller: ChaireFormationBundle:Default:addphoto }
+
+chaire_modify_photo:
+    path:     /modifyphoto/{id}/{idformation}
+    defaults: { _controller: ChaireFormationBundle:Default:modifyphoto }
+
+chaire_modify_photo_event:
+    path:     /modifyphotofromevent/{id}/{idformation}
+    defaults: { _controller: ChaireFormationBundle:Default:modifyphotoevent }
+
+chaire_modify_photo_accompagnement:
+    path:     /modifyphotofromaccompagnement/{id}/{idaccompagnement}
+    defaults: { _controller: ChaireFormationBundle:Default:modifyphotoaccompagnement }
+
+
+chaire_modify_photo_return:
+    path:     /modifyphoto/{id}
+    defaults: { _controller: ChaireFormationBundle:Default:modifyphotoreturn }
+
+
+chaire_add_page_to_formation:
+    path:     /addpagetoformation/{id}
+    defaults: { _controller: ChaireFormationBundle:Default:addpagetoformation }
+
+
+chaire_add_page_to_formationEn:
+    path:     /addpagetoformationen/{id}
+    defaults: { _controller: ChaireFormationBundle:Default:addpagetoformationEn }
+

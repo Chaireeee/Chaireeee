@@ -1,0 +1,66 @@
+</br>
+</br>
+
+view event
+
+<table>
+    <tr>
+        <th>Nom</th>
+        <th>Nom Anglais</th>
+        <th>Description</th>
+        <th>Description En</th>
+        <th>Date</th>
+        <th>Addresse</th>
+        <th>Modifier</th>
+
+        <th>Modifier Page</th>
+        <th>Modifier Page En</th>
+
+        <th>Supprimer</th>
+    </tr>
+    {% for event in events %}
+    <tr>
+
+        <td>{{ event.eventName }}</td>
+        <td>{{ event.eventNameEn }}</td>
+        <td>{{ event.eventDescription |raw}}</td>
+        <td>{{ event.eventDescriptionEn|raw }}</td>
+
+        <td>{{ event.eventDate |date('Y-m-d') }}</td>
+
+        <td>{{ event.eventAddress.numero }}  {{ event.eventAddress.road }}  {{ event.eventAddress.postalCode }}  {{ event.eventAddress.city }}</td>
+        <td><a href={{ path('chaire_admin_modifyEvent',{'id':event.Id  }) }}> modifier</a></td>
+
+
+
+
+
+        {% if event.page is not null %}
+            <td><a href={{ path('generateur_edit_page',{'id':event.page.id  }) }}> modifier page</a></td>
+        {% else %}
+            <td><a href={{ path('chaire_add_page_to_event',{'id':event.id}) }}>Ajouter page</a></td>
+        {% endif %}
+
+        {% if event.pageEn is not null %}
+            <td><a href={{ path('generateur_edit_page',{'id':event.pageEn.id  }) }}> modifier page</a></td>
+            {% else %}
+            <td><a href={{ path('chaire_add_page_to_eventEn',{'id':event.id}) }}>Ajouter page en anglais</a></td>
+        {% endif %}
+
+
+        <td><a href={{ path('chaire_admin_deleteEvent',{'id':event.Id  }) }}> supprimer</a></td>
+    </tr>
+    {% endfor %}
+
+
+
+    <STYLE type="text/css">
+        table
+        {
+            border-collapse: collapse; /* Les bordures du tableau seront collées (plus joli) */
+        }
+        td
+        {
+            border: 1px solid black;
+        }
+    </STYLE>

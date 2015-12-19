@@ -1,0 +1,359 @@
+{% extends '::layout.html.twig' %}
+{% block menu %}
+    {%  include ':parts:navbar.html.twig' %}
+{% endblock %}
+
+
+{% block content %}
+
+
+    {# team photo #}
+    <div class="row pad">
+
+        {% if loc=='en' %}
+
+            <img id="chaireteam" class="img_center" src="{{ asset('bundles/chaireteam/images/chaireee_team_image_eng.png') }}"/>
+        {% else %}
+            <img id="chaireteam" class="img_center" src="{{ asset('bundles/chaireteam/images/image_equipe_fr.png') }}"/>
+        {% endif %}
+
+
+
+
+
+    </div>
+
+
+
+
+<div id="anchor" class="row pad">
+</div>
+
+
+
+
+
+
+
+
+    <div class="container-fluid">
+        <div class="row pad">
+            <div class="col-md-offset-2 col-md-8 ">
+
+                <div  role="tabpanel">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs colort" role="tablist" style="padding-bottom:30px;">
+                        <li  role="presentation" class="active"><a href="#equipe" aria-controls="equipe" role="tab" data-toggle="tab"> <h2 id="titleteam"> ChaireEEE
+                                Team
+
+                                </h2></a></li>
+
+
+                        <li  role="presentation"><a href="#club" aria-controls="club" role="tab" data-toggle="tab"><h2 id="titleclub" >ChaireEEE
+                                   Club
+
+                                </h2></a></li>
+                        <li  role="presentation"><a href="#board" aria-controls="board" role="tab" data-toggle="tab"><h2 id="titleboard"> Board
+
+                                </h2> </a>
+                        </li>
+                        <span class="trianglecss"  ></span>
+                    </ul>
+
+                    <!-- Tab panes
+
+
+
+
+
+                    Tab panes -->
+
+                    <div class="tab-content pad">
+
+
+                        <div role="tabpanel" class="tab-pane active" id="equipe">
+                            <div class="row lightgrey" >
+                            {% for mem in team %}
+
+
+
+
+                                <a href="{{ path('chaire_team_view',{'id':mem.id}) }}">
+                                <div class="col-md-4 ">
+
+
+                                  <img class="photo_team img_center" src="{{ asset(mem.photo.getWebPath()) }}">
+
+
+
+                                    <h4 class="text_center">{{ mem.name }} {{ mem.firstname }}</h4>
+
+                                    <p class="text_center">
+
+                                        {% if loc=='en' %}
+                                            {{ mem.titleEn }}
+                                    {% else %}
+                                        {{ mem.title }}
+                                    {% endif %}
+
+
+                                        </br>
+
+                                    </p>
+
+
+                                </div>
+                                </a>
+
+                            {% endfor %}
+</div>
+
+
+
+                        </div>
+
+
+                        <div role="tabpanel" class="tab-pane " id="club">
+                            <div class="row lightgrey" >
+                            {% for mem in board %}
+                                <a href="{{ path('chaire_team_view',{'id':mem.id}) }}">
+                                    <div class="col-md-4 ">
+
+
+                                        <img class="photo_team img_center" src="{{ asset(mem.photo.getWebPath()) }}">
+
+
+
+                                        <h4 class="text_center">{{ mem.name }} {{ mem.firstname }}</h4>
+
+                                        <p class="text_center">
+
+                                            {% if loc=='en' %}
+                                                {{ mem.titleEn }}
+                                            {% else %}
+                                                {{ mem.title }}
+                                            {% endif %}
+
+
+                                            </br>
+
+                                        </p>
+
+
+                                    </div>
+                                </a>
+                            {% endfor %}
+                                </div>
+
+
+                        </div>
+
+                        <div role="tabpanel" class="tab-pane " id="board">
+
+                            <div class="row lightgrey" >
+                            {% for mem in club %}
+                                <a href="{{ path('chaire_team_view',{'id':mem.id}) }}">
+                                    <div class="col-md-4 ">
+
+
+                                        <img class="photo_team img_center" src="{{ asset(mem.photo.getWebPath()) }}">
+
+
+
+                                        <h4 class="text_center">{{ mem.name }} {{ mem.firstname }}</h4>
+
+                                        <p class="text_center">
+
+                                            {% if loc=='en' %}
+                                                {{ mem.titleEn }}
+                                            {% else %}
+                                                {{ mem.title }}
+                                            {% endif %}
+
+
+                                            </br>
+
+                                        </p>
+
+
+                                    </div>
+                                </a>
+                            {% endfor %}
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+    <style>
+
+
+
+
+
+        .trianglecss{
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 50px 100px 50px;
+            border-color: transparent transparent #dedfe1 transparent;
+            position:relative;
+            bottom:-50px;
+
+        }
+
+
+
+
+       .nav > li > a {
+           position: relative;
+           display: block;
+           padding: 10px 15px;
+           padding-bottom:0px;
+       }
+
+        .nav > li > a:hover {
+            position: relative;
+            display: block;
+            padding: 10px 15px;
+            padding-bottom:0px;
+        }
+
+
+       .nav-tabs > li {
+           float: left;
+           margin-bottom: none;
+       }
+
+       .nav > li > a:hover, .nav > li > a:focus {
+           text-decoration: none;
+           background-color: white;
+           border:none;
+           margin:none;
+       }
+
+        .nav-tabs > li > a{
+            border-bottom: 0px;
+        }
+       .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+
+           cursor: default;
+           background-color: white;
+           border: none;
+           margin: Opx;
+
+       }
+
+
+        li:hover{
+            background-color: white;
+            margin: Opx;
+        }
+
+       li.active a h2{
+           border:none;
+           color:rgb(48,54,61)
+               ;
+
+       }
+
+       .colort h2{
+
+      color: rgb(90,103,117);
+       }
+
+
+
+
+
+div.tab-content.pad{
+    background-color: rgb(222,223,225);
+    box-shadow: none;
+    padding-right:15px;
+    padding-left:15px;
+}
+
+
+         .lightgrey{
+            background-color: rgb(222,223,225);
+             box-shadow: none;
+
+         }
+
+        #chaireteam{
+            width:100%;
+        }
+
+    </style>
+
+    <script>
+
+        $( document ).ready(function() {
+            var origine=$('.trianglecss').offset().left;
+            var milieu=$('#titleteam').offset().left+($('#titleteam').width()/2);
+            var tt=origine-milieu+50;
+            tt+='px';
+            $(".trianglecss").animate({right: tt});
+            /*
+            var milieu=$('#titleteam').offset().left+($('#titleteam').width()/2);
+            var compute=origine-milieu+50;
+            compute+='px';
+            $(".trianglecss").animate({right: compute});
+            */
+
+
+        $('a[href="#equipe"]').click(function (){
+
+            /*
+            var style=$('.trianglecss').attr('style');
+            style=style.substr(6,2);
+            alert(style);
+            */
+
+            var milieu=$('#titleteam').offset().left+($('#titleteam').width()/2);
+            var compute=origine-milieu+50;
+            compute+='px';
+
+
+            $(".trianglecss").animate({right: compute});
+
+        });
+
+        $('a[href="#club"]').click(function (){
+
+
+            var milieu=$('#titleclub').offset().left+($('#titleclub').width()/2);
+            var compute=origine-milieu+50;
+            compute+='px';
+            $(".trianglecss").animate({right: compute});
+
+        });
+        $('a[href="#board"]').click(function (){
+
+            var milieu=$('#titleboard').offset().left+($('#titleboard').width()/2);
+            var compute=origine-milieu+50;
+            compute+='px';
+             //alert(compute);
+            $(".trianglecss").animate({right: compute});
+
+        });
+
+        });
+    </script>
+
+
+{% endblock %}
+

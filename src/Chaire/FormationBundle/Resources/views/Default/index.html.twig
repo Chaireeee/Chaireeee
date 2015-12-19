@@ -1,0 +1,377 @@
+{% extends '::layout.html.twig' %}
+{% block menu %}
+    {%  include ':parts:navbar.html.twig' %}
+{% endblock %}
+
+
+{% block content %}
+
+
+
+    {# photo formation #}
+    <div class="row pad">
+
+
+        {% if loc=='en' %}
+            <img id="chaireformation" class="img_center" src="{{ asset('bundles/chaireformation/images/our_pedagogy_image_eng.png') }}"/>
+        {% else %}
+            <img id="chaireformation" class="img_center" src="{{ asset('bundles/chaireformation/images/notre_pedagogie_image_fr.png') }}"/>
+        {% endif %}
+
+        <
+
+
+    </div>
+
+
+
+
+    <div class="container-fluid">
+        <div class="row pad">
+
+
+            <div class="col-md-offset-2 col-md-8">
+                <p style="text-align:center;" class="baselinetext">
+                    {% trans %}formation.textprincipal{% endtrans %}
+                    <br/> <br/> <br/>
+                </p>
+
+
+
+            </div>
+
+            <div class="col-md-offset-2 col-md-8">
+               <div class="row pad">
+                   <div  id="studentescp" class="col-md-4">
+                       <img  class="img_menu img_center" src="{{ asset('bundles/chaireformation/images/eleves_escp.png') }}"/>
+                       <h4 class="text_center">{% trans %}formation.studentescp{% endtrans %}</h4>
+                   </div>
+                   <div  id="student" class="col-md-4 grisee">
+                       <img  class="img_menu img_center" src="{{ asset('bundles/chaireformation/images/eleves_exte.png') }}"/>
+                       <h4  class="text_center">{% trans %}formation.student{% endtrans %}</h4>
+                   </div>
+                   <div   id="manager" class="col-md-4 grisee">
+                       <img  class="img_menu img_center" src="{{ asset('bundles/chaireformation/images/managers1.png') }}"/>
+                       <h4  class="text_center">{% trans %}formation.managers{% endtrans %}</h4>
+                   </div>
+
+               </div>
+
+            </div>
+
+            <div class="col-md-offset-2 col-md-8">
+                {# student escp #}
+                <div id="tabstudentescp" class="row pad" >
+
+
+                    {% for form in studentescp %}
+                        <div class="col-md-4">
+
+
+                            {% if loc=='en' %}
+                            {% if form.pageEn is not null %}
+                            <a href="{{ path('generateur_view_page',{id:form.pageEn.id}) }}">
+                                {% else %}
+
+                                {% if form.page is not null%}
+                                <a href="{{ path('generateur_view_page',{id:form.page.id}) }}">
+                                {% endif %}
+
+                                    {% endif %}
+                                    {% else %}
+                                    {% if form.page is not null%}
+                                    <a href="{{ path('generateur_view_page',{id:form.page.id}) }}">
+                                        {% endif %}
+                                        {% endif %}
+
+
+                                <img style=" width:250px;" src="{{ asset(form.Logo.getWebPath()) }}">
+                            </a>
+                                    {% if loc=='en' %}
+                                        <h4 style="text-align:center;" class="titreitem">{{ form.nameEn | upper}}</h4>
+                                    {% else %}
+                                        <h4 style="text-align:center;" class="titreitem">{{ form.name | upper }}</h4>
+                                    {% endif %}
+                            <p style="text-align:center;">
+
+                                {% if loc=='en' %}
+                                     <h4 style="text-align:center;">{{ form.conceptEn}}</h4>
+                                {% else %}
+                                    <h4 style="text-align:center;">{{ form.concept}}</h4>
+                                    {% endif %}
+
+                            </p>
+
+
+
+
+                        </div>
+                    {% endfor %}
+
+                </div>
+                {# student  #}
+                <div id="tabstudent" style="display:none;" class="row pad">
+
+                    {% for form in studentexte %}
+                        <div class="col-md-4">
+
+
+                            {% if loc=='en' %}
+                            {% if form.pageEn is not null %}
+                            <a href="{{ path('generateur_view_page',{id:form.pageEn.id}) }}">
+                                {% else %}
+
+                                {% if form.page is not null%}
+                                <a href="{{ path('generateur_view_page',{id:form.page.id}) }}">
+                                    {% endif %}
+
+                                    {% endif %}
+                                    {% else %}
+                                    {% if form.page is not null%}
+                                    <a href="{{ path('generateur_view_page',{id:form.page.id}) }}">
+                                        {% endif %}
+                                        {% endif %}
+
+
+                                        <img style=" width:250px;" src="{{ asset(form.Logo.getWebPath()) }}">
+                                    </a>
+                                    {% if loc=='en' %}
+                                        <h4 style="text-align:center;" class="titreitem">{{ form.nameEn | upper}}</h4>
+                                    {% else %}
+                                        <h4 style="text-align:center;" class="titreitem">{{ form.name | upper }}</h4>
+                                    {% endif %}
+                                    <p style="text-align:center;">
+
+                                        {% if loc=='en' %}
+                                            {{ form.conceptEn}}
+                                        {% else %}
+                                            {{ form.concept }}
+                                        {% endif %}
+
+                                    </p>
+
+
+
+
+                        </div>
+                    {% endfor %}
+
+
+
+                </div>
+
+                {# student  #}
+                <div id="tabmanager" style="display:none;" class="row pad" style="border: solid 3px black; ">
+
+                    {% for form in executive %}
+                        <div class="col-md-4">
+
+
+                            {% if loc=='en' %}
+                            {% if form.pageEn is not null %}
+                            <a href="{{ path('generateur_view_page',{id:form.pageEn.id}) }}">
+                                {% else %}
+
+                                {% if form.page is not null%}
+                                <a href="{{ path('generateur_view_page',{id:form.page.id}) }}">
+                                    {% endif %}
+
+                                    {% endif %}
+                                    {% else %}
+                                    {% if form.page is not null%}
+                                    <a href="{{ path('generateur_view_page',{id:form.page.id}) }}">
+                                        {% endif %}
+                                        {% endif %}
+
+
+                                        <img class="img_center" style=" width:250px;" src="{{ asset(form.Logo.getWebPath()) }}">
+                                    </a>
+                                    {% if loc=='en' %}
+                                        <h4 style="text-align:center;" class="titreitem">{{ form.nameEn | upper}}</h4>
+                                    {% else %}
+                                        <h4 style="text-align:center;" class="titreitem">{{ form.name | upper }}</h4>
+                                    {% endif %}
+                                    <p style="text-align:center;">
+
+                                        {% if loc=='en' %}
+                                            {{ form.conceptEn}}
+                                        {% else %}
+                                            {{ form.concept }}
+                                        {% endif %}
+
+                                    </p>
+
+
+
+
+                        </div>
+                    {% endfor %}
+
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+{#
+
+            <div class="col-md-offset-2 col-md-8" style="paddin">
+
+
+                <div role="tabpanel">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#escp" aria-controls="escp" role="tab" data-toggle="tab">Etudiant ESCP</a></li>
+                        <li role="presentation"><a href="#exte" aria-controls="exte" role="tab" data-toggle="tab">Etudiants</a></li>
+                        <li role="presentation"><a href="#executive" aria-controls="executive" role="tab" data-toggle="tab">Executive</a></li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="escp">
+                            <div class="row">
+
+
+                                {% for form in studentescp %}
+                                    <div class="col-md-4">
+
+                                        <h4 style="text-align:center;">{{ form.name }}</h4>
+                                        <img style=" width:250px;" src="/uploads/img/{{ form.photolink }}">
+                                        <p style="text-align:center;">
+                                            {{ form.concept }}
+                                            {{ form.urlstory }}
+                                        </p>
+
+
+
+
+                                    </div>
+                                {% endfor %}
+
+
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="exte">
+
+                            {% for form in studentexte %}
+                                <div class="col-md-4">
+
+                                    <h4 style="text-align:center;">{{ form.name }}</h4>
+                                    <img style=" width:250px;" src="{{ form.photolink }}">
+                                    <p style="text-align:center;">
+                                        {{ form.concept }}
+                                        {{ form.urlstory }}
+                                    </p>
+
+
+
+
+                                </div>
+                            {% endfor %}
+
+                        </div>
+
+                        <div role="tabpanel" class="tab-pane" id="executive">
+
+                            {% for form in executive %}
+                                <div class="col-md-4">
+
+                                    <h4 style="text-align:center;">{{ form.name }}</h4>
+                                    <img style=" width:250px;" src="{{ form.photolink }}">
+                                    <p style="text-align:center;">
+                                        {{ form.concept }}
+                                        {{ form.urlstory }}
+                                    </p>
+
+
+
+
+                                </div>
+                            {% endfor %}
+
+                            </div>
+
+                    </div>
+
+                </div>
+
+            </div> #}
+
+        </div>
+    </div>
+
+
+    <script>
+
+
+$('#studentescp').click(function (){
+    $('#tabstudentescp').attr('style',' ');
+    $('#tabstudent').attr('style','display:none; ');
+    $('#tabmanager').attr('style','display:none; ');
+
+    $('#studentescp').removeClass('grisee');
+    $('#student').addClass('grisee');
+    $('#manager').addClass('grisee');
+});
+
+$('#student').click(function (){
+    $('#tabstudentescp').attr('style','display:none; ');
+    $('#tabstudent').attr('style',' ');
+    $('#tabmanager').attr('style','display:none; ');
+
+    $('#studentescp').addClass('grisee');
+    $('#student').removeClass('grisee');
+    $('#manager').addClass('grisee');
+});
+
+$('#manager').click(function (){
+    $('#tabstudentescp').attr('style','display:none; ');
+    $('#tabstudent').attr('style','display:none; ');
+    $('#tabmanager').attr('style',' ');
+
+    $('#studentescp').addClass('grisee');
+    $('#student').addClass('grisee');
+    $('#manager').removeClass('grisee');
+});
+
+
+
+    </script>
+
+    <style>
+        .grisee{
+            filter: grayscale(1);
+            -webkit-filter: grayscale(1);
+            -moz-filter: grayscale(1);
+            -o-filter: grayscale(1);
+            -ms-filter: grayscale(1);
+        }
+
+        .grisee:hover{
+            filter: grayscale(0);
+            -webkit-filter: grayscale(0);
+            -moz-filter: grayscale(0);
+            -o-filter: grayscale(0);
+            -ms-filter: grayscale(0);
+        }
+
+        .img_menu{
+            width:40%;
+        }
+
+
+        #chaireformation{
+            width:100%;
+        }
+    </style>
+
+
+
+{% endblock %}

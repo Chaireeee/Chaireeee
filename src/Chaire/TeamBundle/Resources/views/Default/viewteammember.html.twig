@@ -1,0 +1,61 @@
+{% extends '::layout.html.twig' %}
+{% block menu %}
+    {%  include ':parts:navbar.html.twig' %}
+{% endblock %}
+
+
+{% block content %}
+
+
+
+    <div class="container-fluid">
+        <div class="row pad">
+            <div class="col-md-offset-2 col-md-8 ">
+
+                <img class="photo_team img_center" src="{{ asset(member.photo.getWebPath()) }}">
+                <h4 class="text_center">{{ member.name }} {{ member.firstname }}</h4>
+                <h4 class="text_center blue">{{ member.title }}</h4>
+
+                <p class="text_center">
+
+
+                    {{ member.bio |raw }}
+
+                </p>
+            </div>
+        </div>
+
+        <div class="row pad">
+
+            <a href="{{ member.twitter }}">
+            <div class="col-md-offset-5 col-md-1 ">
+                <img class="photo_team_member img_center" src="{{ asset('bundles/chaireteam/images/twitterbio.png') }}">
+
+            </div>
+            </a>
+            <a href="{{ member.linkedin }}">
+            <div class=" col-md-1 ">
+
+                <img class="photo_team_member img_center" src="{{ asset('bundles/chaireteam/images/linkedinbio.jpg') }}">
+            </div>
+            </a>
+        </div>
+
+
+        <div class="row pad">
+            <a href="{{ path('chaire_team_homepage') }}#anchor"><h4 class="text_center blue">{% trans %}
+                    viewteammenber.getback{% endtrans %}</h4></a>
+        </div>
+
+
+    </div>
+    </div>
+
+    <style>
+        .photo_team_member{
+
+        }
+    </style>
+
+
+{% endblock %}

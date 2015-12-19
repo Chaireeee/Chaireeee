@@ -1,0 +1,52 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Accompagnement</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>{% trans %}admin.accompagnement.id{% endtrans %}</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>{% trans %}admin.accompagnement.namenlg{% endtrans %}</th>
+                <td>{{ entity.nameLg }}</td>
+            </tr>
+            <tr>
+                <th>{% trans %}admin.accompagnement.nameen{% endtrans %}</th>
+                <td>{{ entity.nameEn }}</td>
+            </tr>
+            <tr>
+                <th>{% trans %}admin.accompagnement.baselinenlg{% endtrans %}</th>
+                <td>{{ entity.baselineLg }}</td>
+            </tr>
+            <tr>
+                <th>{% trans %}admin.accompagnement.baselineenglish{% endtrans %}</th>
+                <td>{{ entity.baselineEn }}</td>
+            </tr>
+            <tr>
+                <th>{% trans %}admin.accompagnement.logo{% endtrans %}</th>
+                <td><img style="width:100px;" src="{{ asset(entity.logo.getWebPath()) }}">  </td>
+            </tr>
+            <tr>
+                <th>{% trans %}admin.accompagnement.image{% endtrans %}</th>
+                < <td><img style="width:100px;" src="{{ asset(entity.imageentete.getWebPath()) }}">  </td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('accompagnement') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('accompagnement_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

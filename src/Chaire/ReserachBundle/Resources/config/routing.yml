@@ -1,0 +1,13 @@
+chaire_research_homepage:
+    path:     /recherche
+    defaults: { _controller: ChaireReserachBundle:Default:index }
+
+
+chaire_add_page_to_reserach:
+    path:     /addpagetoresearch/{id}
+    defaults: { _controller: ChaireReserachBundle:Default:addpagetoresearch }
+
+chaire_add_page_to_reserachEn:
+    path:     /addpagetoresearchEn/{id}
+    defaults: { _controller: ChaireReserachBundle:Default:addpagetoresearchEn }
+

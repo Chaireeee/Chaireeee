@@ -1,0 +1,52 @@
+</br>
+</br>
+
+
+
+<a href="{{ path('chaire_admin_addFormation') }}">add a formation</a>
+
+<h2>view event</h2>
+
+<table>
+    <tr>
+
+        <th>Name</th>
+        <th>concept</th>
+
+
+        <th>student ecp</th>
+        <th>student exte</th>
+        <th>executive</th>
+
+
+        <th>Modifier</th>
+        <th>Supprimer</th>
+    </tr>
+    {% for formation in formations %}
+    <tr>
+
+        <td>{{ formation.name }}</td>
+        <td>{{ formation.concept }}</td>
+
+
+        <td>{{ formation.studentescp  }}</td>
+        <td>{{ formation.studentexte }}</td>
+        <td>{{ formation.executive  }}</td>
+
+        <td><a href={{ path('chaire_admin_modifyFormation',{'id':formation.Id  }) }}> modifier</a></td>
+        <td><a href={{ path('chaire_admin_deleteFormation',{'id':formation.Id  }) }}> supprimer</a></td>
+    </tr>
+    {% endfor %}
+
+
+
+    <STYLE type="text/css">
+        table
+        {
+            border-collapse: collapse; /* Les bordures du tableau seront collées (plus joli) */
+        }
+        td
+        {
+            border: 1px solid black;
+        }
+    </STYLE>

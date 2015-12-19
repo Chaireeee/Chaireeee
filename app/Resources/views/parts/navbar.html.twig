@@ -1,0 +1,195 @@
+
+{#
+<div class="navbar navbar-default navbar-fixed-top">
+#}
+    <div class="red navigation">
+
+        {#
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{{ path('chaire_accueil_homepage') }}"><img style="width:70px;" src="http://s3.amazonaws.com/foundum-com-uploads/organization_account_image_uploads/6985/images/medium/LogoChaireEEE_newEY-04.png?1384167185"/></a>
+
+        </div>
+
+
+        <ul class="nav navbar-nav">
+        <ul tt class="
+
+
+            /\
+           /  \||
+          /    ||
+         /      |
+        /        \
+        |--------|
+        |  ___   |
+        |  | |   |
+        |--------|
+        |   ___  |
+        |___| |__|
+
+
+        ">
+        <ul class="nav navbar-nav">
+
+        </ul>
+
+          #}
+       {# <ul class="nav navbar-nav navbar-right">#}
+        <p class="text_right">
+            <a class="text"   href={{ path('chaire_formation_homepage') }}>
+                    <img  class="img_center petitcarre" src="{{ asset('bundles/chaireaccueil/images/Paris.png') }}"/>
+            </a>
+
+            <a class="text"    href={{ path('chaire_formation_homepage') }}>
+                    <img  class="img_center petitcarre" src="{{ asset('bundles/chaireaccueil/images/berlin.png') }}"/>
+            </a>
+
+            <a class="text"    href={{ path('chaire_formation_homepage') }}>
+                    <img  class="img_center petitcarre" src="{{ asset('bundles/chaireaccueil/images/london.png') }}"/>
+            </a>
+
+            <a class="text"   href={{ path('chaire_formation_homepage') }}>
+                    <img  class="img_center petitcarre" src="{{ asset('bundles/chaireaccueil/images/madrid.png') }}"/>
+            </a>
+
+            <a class="text" style="margin-right:15px;"  href={{ path('chaire_formation_homepage') }}>
+                    <img  class="img_center petitcarre" src="{{ asset('bundles/chaireaccueil/images/turin.png') }}"/>
+            </a>
+
+
+
+
+
+
+            <a class="text barside  " id="formation" href={{ path('chaire_accueil_homepage') }}>{% trans %}navbar.accueil{% endtrans %}</a>
+            <img  class="img_center barre" src="{{ asset('bundles/chaireaccueil/images/petitcarre.png') }}"/>
+            <a class="text barside {% if page_active==3 %} page_actif {% endif %} " id="formation" href={{ path('chaire_formation_homepage') }}>{% trans %}navbar.formation{% endtrans %}</a>
+            <img  class="img_center barre" src="{{ asset('bundles/chaireaccueil/images/petitcarre.png') }}"/>
+            <a    href="{{ path('chaire_research_homepage') }}" class="text barside  {% if page_active==5 %} page_actif {% endif %}" id="team" href=>{% trans %}navbar.recherche{% endtrans %}</a>
+            <img  class="img_center barre" src="{{ asset('bundles/chaireaccueil/images/petitcarre.png') }}"/>
+            <a class=" {% if page_active==4 %} page_actif {% endif %}text barside" id="accompagnement" href={{ path('accompagnement') }}>{% trans %}navbar.acc{% endtrans %}</a>
+
+            <img  class="img_center barre" src="{{ asset('bundles/chaireaccueil/images/petitcarre.png') }}"/>
+            <a class="text barside {% if page_active==1 %} page_actif {% endif %} " id="event"  href={{ path('chaire_event_homepage') }}>{% trans %}navbar.event{% endtrans %}</a>
+
+            <img  class="img_center barre" src="{{ asset('bundles/chaireaccueil/images/petitcarre.png') }}"/>
+            <a class="text barside {% if page_active==2 %} page_actif {% endif %} " id="team" href={{ path('chaire_team_homepage') }}>{% trans %}navbar.equipe{% endtrans %}</a>
+
+            <img  class="img_center barre" src="{{ asset('bundles/chaireaccueil/images/petitcarre.png') }}"/>
+
+            <a class="text barside" id="team" href={{ url('chaire_accueil_homepage', {_locale: 'fr'}) }}>
+                <img  class="img_center flags" src="{{ asset('bundles/chaireaccueil/images/drapeau_france.png') }}"/>
+            </a>
+
+
+
+            <a class="text barside" id="team" href={{ url('chaire_accueil_homepage', {_locale: 'en'}) }}>
+                <img  class="img_center flags" src="{{ asset('bundles/chaireaccueil/images/drapeau_english.png') }}"/>
+            </a>
+        </p>
+    </div>
+
+
+
+
+{# logo chaire #}
+
+<div id="firstelement" class="row ">
+    <div class=" col-md-offset-4 col-md-4">
+
+        <br><br>
+       {#  <a    href={{ path('chaire_accueil_homepage') }}>
+        <img id="chaire_logo" class="img_center"
+             src="{{ asset('bundles/chaireaccueil/images/logo_chairEEE_header.png') }}"/>
+            </a>#}
+
+    </div>
+</div>
+
+
+<style>
+
+    .barre {
+        width: 3px;
+        height: 25px;
+        display: inline-block;
+        position:relative;
+        top:-5px;
+
+    }
+
+    .barside{
+        padding-right:10px;
+        padding-left:10px;
+    }
+
+    #firstelement{
+        padding-top:70px;
+
+    }
+    .navigation{
+        padding-top:10px;
+        width:100%;
+        height:70px;
+        position:fixed;
+        background-color: white;
+        z-index: 4;
+    }
+
+    .text_right{
+        text-align:right;
+    }
+
+
+
+
+    .text{
+        font-size: 25px;
+        color:rgb(59,92,163);
+    }
+
+    .text:hover{
+        font-size: 25px;
+        color:lightgrey;
+        text-decoration:none;
+    }
+
+    #chaire_logo{
+        width:250px;
+    }
+
+    .petitcarre{
+        width:20px;
+        display: inline-block;
+    }
+
+/*
+    .navbar-default .navbar-nav > li > a {
+        color:rgb(6,38,94);
+        font-weight: bold;
+    }
+
+
+*/
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

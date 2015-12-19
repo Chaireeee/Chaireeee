@@ -1,0 +1,92 @@
+oc_user:
+    resource: "@OCUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+chaire_accueil_homepages:
+    path:     /
+    defaults: { _controller: ChaireAccueilBundle:Default:accueil }
+
+chaire_reserach:
+    resource: "@ChaireReserachBundle/Resources/config/routing.yml"
+    prefix:   /
+
+generateur:
+    resource: "@GenerateurBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}/paris
+
+chaire_team:
+    resource: "@ChaireTeamBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}/paris
+
+
+chaire_social_annotation:
+    resource: "@ChaireAccueilBundle/Controller/SocialNetworkController.php"
+    type:     annotation
+    prefix:   /{_locale}/paris/admin
+
+
+
+chaire_highlight_annotation:
+    resource: "@ChaireAccueilBundle/Controller/HighlightController.php"
+    type:     annotation
+    prefix:   /{_locale}/paris/admin
+
+chaire_team_annotation:
+    resource: "@ChaireTeamBundle/Controller/TeamController.php"
+    type:     annotation
+    prefix:   /{_locale}/paris/admin
+
+chaire_formation_annotation:
+    resource: "@ChaireFormationBundle/Controller/FormationController.php"
+    type:     annotation
+    prefix:   /{_locale}/paris/admin
+
+
+
+chaire_research_annotation:
+    resource: "@ChaireReserachBundle/Controller/ResearchController.php"
+    type:     annotation
+    prefix:   /{_locale}/paris/admin
+
+
+chaire_accompagnement_annotation:
+    resource: "@ChaireAccueilBundle/Controller/AccompagnementController.php"
+    type:     annotation
+    prefix:   /{_locale}/paris/admin
+
+
+chaire_team_annotation:
+    resource: "@ChaireAdminBundle/Controller/TeamController.php"
+    type:     annotation
+    prefix:   /{_locale}/paris/admin
+
+
+chaire_formation:
+    resource: "@ChaireFormationBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}/paris
+
+chaire_admin:
+    resource: "@ChaireAdminBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}/paris/admin
+
+chaire_event:
+    resource: "@ChaireEventBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}/paris
+
+chaire_accueil:
+    resource: "@ChaireAccueilBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}/paris
+
+chaire_research:
+    resource: "@ChaireReserachBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}/paris
+
+login:
+    pattern:   /login
+    defaults:  { _controller: OCUserBundle:Security:login }
+
+login_check:
+    pattern:   /login_check
+
+logout:
+    pattern:   /logout

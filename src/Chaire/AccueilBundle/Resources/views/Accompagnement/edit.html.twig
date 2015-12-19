@@ -1,0 +1,36 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <h1>Accompagnement edit</h1>
+
+    {{ form(edit_form) }}
+
+    <br>
+
+            <a href="{{ path('chaire_modify_photo_accompagnement',{'id':entity.logo.id,'idaccompagnement':entity.id}) }}">{% trans %}admin.accompagnement.modifylogo{% endtrans %} </a>
+<br>
+            <a href="{{ path('chaire_modify_photo_accompagnement',{'id':entity.imageentete.id,'idaccompagnement':entity.id}) }}">{% trans %}admin.accompagnement.modifyimage{% endtrans %} </a>
+    <br>
+    {% if entity.page is not null %}
+    <a href="{{ path('generateur_modify_info_page',{'id': entity.page.id  }) }}">{% trans %}admin.accompagnement.modifypagenlg{% endtrans %} </a>
+    {% else %}
+    {% endif %}
+    <br>
+    {% if entity.pageEn is not null %}
+    <a href="{{ path('generateur_modify_info_page',{'id':event.pageEn.id  }) }}">{% trans %}admin.accompagnement.modifypageen{% endtrans %} </a>
+    {% else %}
+    {% endif %}
+    <br>
+    <br>
+    <br>
+
+    <ul class="record_actions">
+    <li>
+        <a href="{{ path('accompagnement') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

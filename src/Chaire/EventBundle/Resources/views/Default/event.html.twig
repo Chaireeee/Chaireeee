@@ -1,0 +1,208 @@
+{% extends '::layout.html.twig' %}
+
+{% block title %}Evenements{% endblock %}
+{% block menu %}
+    {%  include ':parts:navbar.html.twig' %}
+
+
+
+
+{% endblock %}
+
+
+
+{% block content %}
+
+    {# photo event #}
+<div class="row pad">
+
+
+    {% if loc=='en' %}
+        <img id="chaireevent" class="img_center" src="{{ asset('bundles/chaireevent/images/our_events_image_eng.png') }}"/>
+
+    {% else %}
+        <img id="chaireevent" class="img_center" src="{{ asset('bundles/chaireevent/images/nos_evenement_image_fr.png') }}"/>
+    {% endif %}
+
+
+</div>
+
+    <div class="row pad">
+
+       <p class="text_center baselinetext" >
+
+           {% trans %}event.textprincipal{% endtrans %}
+       </p>
+    </div>
+
+
+
+
+
+    <div class="container-fluid">
+        <div class="row pad">
+            <div class="col-md-offset-1 col-md-10">
+
+                <h4 class="text_center blue" style="font-size: 29px;">{% trans %}event.tocome{% endtrans %}</h4>
+                <br>
+                {% for event in event_futur %}
+                    <div class="col-md-4">
+
+
+
+                        {% if loc=='en' %}
+                        {% if event.pageEn is not null %}
+                        <a href="{{ path('generateur_view_page',{id:event.pageEn.id}) }}">
+                            {% else %}
+                            <a href="{{ path('generateur_view_page',{id:event.page.id}) }}">
+                                {% endif %}
+                                {% else %}
+                                <a href="{{ path('generateur_view_page',{id:event.page.id}) }}">
+                                    {% endif %}
+
+                                    <img class="img_center" style=" width:250px;" src={{ asset(event.Logo.getWebPath()) }}>
+                                </a>
+                                {% if loc=='en' %}
+                                    <h4  class="titreitem" >{{ event.eventNameEn | upper}}</h4>
+                                {% else %}
+                                    <h4  class="titreitem">{{ event.eventName | upper}}</h4>
+                                {% endif %}
+
+                                <p style="text-align:center;">
+                                    {% if loc=='en' %}
+                                <h4 style="text-align:center;">{{ event.eventDescriptionEn |raw }}</h4>
+                            {% else %}
+                                <h4 style="text-align:center;">{{ event.eventDescription |raw }}</h4>
+                                {% endif %}
+
+                                {#
+                                </p>
+                                <p style="text-align:center;">
+                                    {% if loc=='en' %}
+                                        {{ event.eventDate |date("m/d/Y G:i") }}
+                            {% else %}
+                                {{ event.eventDate |date("d/m/Y G:i") }}
+                                {% endif %}
+
+
+
+                                <br>{{ event.eventAddress.numero }} {{ event.eventAddress.road }} {{ event.eventAddress.postalcode }} {{ event.eventAddress.city }}
+                                </p>  #}
+
+
+
+                    </div>
+
+
+                {% endfor %}
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+            <div class="row pad">
+                <div class="col-md-offset-1 col-md-10">
+                    <br><br>
+            <h4 class="text_center blue" style="font-size: 29px;">{% trans %}event.passed{% endtrans %}</h4>
+            <br>
+            {% for event in event_passe %}
+                <div class="col-md-4">
+
+
+
+                    {% if loc=='en' %}
+                        {% if event.pageEn is not null %}
+                        <a href="{{ path('generateur_view_page',{id:event.pageEn.id}) }}">
+                        {% else %}
+                        <a href="{{ path('generateur_view_page',{id:event.page.id}) }}">
+                        {% endif %}
+                    {% else %}
+                    <a href="{{ path('generateur_view_page',{id:event.page.id}) }}">
+                    {% endif %}
+
+                    <img class="img_center" style=" width:250px;" src={{ asset(event.Logo.getWebPath()) }}>
+                    </a>
+                            {% if loc=='en' %}
+                                <h4  class="titreitem" >{{ event.eventNameEn | upper}}</h4>
+                            {% else %}
+                                <h4  class="titreitem">{{ event.eventName | upper}}</h4>
+                            {% endif %}
+
+                    <p style="text-align:center;">
+                        {% if loc=='en' %}
+                    <h4 style="text-align:center;">{{ event.eventDescriptionEn |raw }}</h4>
+                {% else %}
+                    <h4 style="text-align:center;">{{ event.eventDescription |raw }}</h4>
+                    {% endif %}
+
+                            {#
+                                </p>
+                                <p style="text-align:center;">
+                                    {% if loc=='en' %}
+                                        {{ event.eventDate |date("m/d/Y G:i") }}
+                            {% else %}
+                                {{ event.eventDate |date("d/m/Y G:i") }}
+                                {% endif %}
+
+
+
+                                <br>{{ event.eventAddress.numero }} {{ event.eventAddress.road }} {{ event.eventAddress.postalcode }} {{ event.eventAddress.city }}
+                                </p>  #}
+
+
+
+                </div>
+
+            {% endfor %}
+
+                    </div></div>
+
+
+        </div>
+    </div>
+
+
+
+
+    <style>
+
+        #chaireevent{
+            width:100%;
+        }
+
+    </style>
+
+{#
+    <script type="text/javascript">
+        (function () {
+            if(/iPhone|iPod|Android|opera mini|blackberry|palm os|palm|hiptop|avantgo|plucker|xiino|blazer|elaine|iris|3g_t|windows ce|opera mobi|windows ce; smartphone;|windows ce;iemobile/i.test(navigator.userAgent)){
+                var question = confirm("Voulez-vous consulter la version mobile de ce site ?")
+                if (question){
+                    window.location = "http://adressedelaverisonmobile.com";
+                }
+            }
+        }());
+    </script>
+#}
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+

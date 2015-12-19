@@ -1,0 +1,7 @@
+chaire_team_homepage:
+    path:     /team
+    defaults: { _controller: ChaireTeamBundle:Default:index }
+
+chaire_team_view:
+    path:     /team/{id}
+    defaults: { _controller: ChaireTeamBundle:Default:view }

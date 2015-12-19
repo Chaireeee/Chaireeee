@@ -1,0 +1,8 @@
+services:
+#    chaire_accueil.example:
+#        class: Chaire\AccueilBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
+
+services:
+    chaire.mailjet:
+        class: Chaire\AccueilBundle\Services\MailjetService

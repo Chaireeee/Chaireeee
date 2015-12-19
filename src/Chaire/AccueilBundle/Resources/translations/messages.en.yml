@@ -1,0 +1,74 @@
+
+welcome.ourActivities: Our activities
+welcome.now: En ce moment
+welcome.close: Fermer
+
+
+welcome.image.event: bundles/chaireaccueil/images/image_activites.png
+welcome.image.formation:
+welcome.image.help:
+welcome.image.research:
+
+
+welcome.newsletter.title: Vivez et revivez nos moments forts
+welcome.newsletter.title.desc: Inscrivez vous et recevez une fois par mois le programme des événements conçus pour vous, notre actualité pédagogique et suivez les projets accompagnés par notre équipe
+welcome.newsletter.enteremail: Entrez votre adresse mail
+welcome.newsletter.youare: Vous êtes
+welcome.newsletter.promesse.title: Notre Promesse
+welcome.newsletter.promesse: Nous ne communiqueront jamais votre adresse, c'est promis !
+
+
+footer.dontmiss: DON'T MISS ANYTHING, SUBSCRIBE TO THE NEWSLETTER
+footer.entrepreneur: Entrepreneur
+footer.investor: Investor
+footer.student: Student
+footer.corporate: Corporate
+footer.presse: Press
+footer.academic: Academics
+footer.discover: DISCOVER OUR CAMPUS
+footer.placeholder: Your E-mail Adress
+
+
+footer.facebook: https://www.facebook.com/chaireentrepreneuriat
+footer.twitter:
+footer.email:
+footer.youtube:
+footer.medium:
+
+
+admin.addevent: Add an event
+admin.addformation: add a formation
+admin.addteammember: Add a team member
+admin.addaccompagnement: Add accompagnement
+
+welcome.event: Event
+welcome.acc: Help
+welcome.recherche: Research
+welcome.formation: Formation
+
+index.event.add: Ajouter un evenement
+index.event.view: voir et modifier les evenements
+index.event.frise.add: Ajouter une frise temporelle
+
+
+event.textprincipal: Hi Ho
+event.tocome: Event to come
+event.passed: Past event
+
+navbar.event: Event
+navbar.formation: Education
+navbar.acc: Coaching
+navbar.recherche: Research
+navbar.equipe: ChaireEEE Team
+navbar.accueil: Home
+
+
+formation.studentescp: ESCP Europe Student
+formation.student: External Student
+formation.managers: Managers / Entrepreneur
+formation.textprincipal: Different formation are available
+
+viewteammenber.getback: Revenir à la page équipe
+
+accompagnement.text: hi
+recherche.textprincipal: research

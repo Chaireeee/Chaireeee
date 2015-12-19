@@ -1,0 +1,13 @@
+chaire_event_homepage:
+    path:     /evenement
+    defaults: { _controller: ChaireEventBundle:Default:evenement }
+
+chaire_add_page_to_event:
+    path:     /addpagetoevent/{id}
+    defaults: { _controller: ChaireEventBundle:Default:addpagetoevent }
+
+chaire_add_page_to_eventEn:
+    path:     /addpagetoeventen/{id}
+    defaults: { _controller: ChaireEventBundle:Default:addpagetoeventEn }
+
+

@@ -1,0 +1,27 @@
+{{ form(form) }}
+
+
+<a  href="{{ path('generateur_edit_photo',{'idpicture':slide.fond.id,'idpage':page,'idslide':slide.id}) }}">
+    edit fond
+</a>
+<br>
+<a  href="{{ path('generateur_edit_photo',{'idpicture':slide.photo1.id,'idpage':page,'idslide':slide.id}) }}">
+    edit photo 1
+</a>
+<br>
+<a  href="{{ path('generateur_edit_photo',{'idpicture':slide.photo2.id,'idpage':page,'idslide':slide.id}) }}">
+    edit photo 2
+</a>
+<br>
+<a  href="{{ path('generateur_edit_photo',{'idpicture':slide.photo3.id,'idpage':page,'idslide':slide.id}) }}">
+    edit photo 3
+</a>
+<br>
+<img style="width:250px;" src="{{ asset('uploads/img/template/6.jpg') }}">
+
+<style>
+    textarea{
+        width:400px;
+        height:200px;
+    }
+</style>

@@ -1,0 +1,19 @@
+{{ form(form) }}
+
+
+<a  href="{{ path('generateur_edit_photo',{'idpicture':slide.fond.id,'idpage':page,'idslide':slide.id}) }}">
+    edit fond
+</a>
+<br>
+<a  href="{{ path('generateur_edit_photo',{'idpicture':slide.photo.id,'idpage':page,'idslide':slide.id}) }}">
+    edit photo
+</a>
+<br>
+<img style="width:250px;" src="{{ asset('uploads/img/template/1.jpg') }}">
+
+<style>
+    textarea{
+        width:400px;
+        height:200px;
+    }
+</style>

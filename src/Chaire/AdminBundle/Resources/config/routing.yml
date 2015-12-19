@@ -1,0 +1,55 @@
+chaire_admin_homepage:
+    path:     /
+    defaults: { _controller: ChaireAdminBundle:Default:index }
+
+
+
+chaire_admin_addEvent:
+    path:     /addEvent
+    defaults: { _controller: ChaireAdminBundle:Event:addEvent }
+
+chaire_admin_viewEvent:
+    path:     /viewEvent
+    defaults: { _controller: ChaireAdminBundle:Event:viewEvent }
+
+chaire_admin_indexEvent:
+    path:     /indexEvent
+    defaults: { _controller: ChaireAdminBundle:Event:eventIndex }
+
+chaire_admin_modifyEvent:
+    path:     /modifyEvent/{id}
+    defaults: { _controller: ChaireAdminBundle:Event:modifyEvent }
+
+
+chaire_admin_deleteEvent:
+    path:     /deleteEvent/{id}
+    defaults: { _controller: ChaireAdminBundle:Event:deleteEvent }
+
+
+
+chaire_admin_addFrise:
+    path:     /addFrise
+    defaults: { _controller: ChaireAdminBundle:Event:addFrise }
+
+
+chaire_admin_deleteFormation:
+    path:     /deleteFormation/{id}
+    defaults: { _controller: ChaireAdminBundle:Formation:deleteFormation }
+
+chaire_admin_addFormation:
+    path:     /addFormation
+    defaults: { _controller: ChaireAdminBundle:Formation:addFormation }
+
+chaire_admin_viewFormation:
+    path:     /viewFormation
+    defaults: { _controller: ChaireAdminBundle:Formation:viewFormation }
+
+chaire_admin_indexFormation:
+    path:     /indexFormation
+    defaults: { _controller: ChaireAdminBundle:Formation:eventFormation }
+
+chaire_admin_modifyEvent:
+    path:     /modifyFormation/{id}
+    defaults: { _controller: ChaireAdminBundle:Formation:modifyFormation }
+
+

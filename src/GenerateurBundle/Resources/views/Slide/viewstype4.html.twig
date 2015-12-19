@@ -1,0 +1,53 @@
+<link rel="stylesheet" href={{ asset('public/css/bootstrap.css') }} >
+<link rel="stylesheet" href={{ asset('public/css/styleonepage.css') }} >
+{# END of A supprimer par la suite #}
+
+
+
+<!-- INSCRIPTION GRAND JURY -->
+<div class="grandjury" id="i{{ slide.id }}">
+    <div class="container">
+
+        <h3 class="textcenter">{{ slide.name }}</h3>
+        <div class="container">
+            <br><h3 class="textcenter"></h3><br>
+            <div class="row">
+
+                <div class="justify col-md-4 textcenter">
+                    {{ slide.texte1| raw }}
+                </div>
+                <div class="justify col-md-4 textcenter">
+                    {{ slide.texte2 | raw}}
+                </div>
+                <div class="justify col-md-4 textcenter">
+                    {{ slide.texte3| raw }}
+                </div>
+
+
+            </div>
+
+        </div><br><br>
+    </div>
+
+
+
+</div><br><br>
+</div>
+
+<!-- INTERCAL 3 -->
+
+<div class="t{{ slide.id }}" id="t{{ slide.id }}" >
+
+</div>
+
+
+<style>
+    .t{{ slide.id }} {
+        background: url(http://{{ app.request.server.get("SERVER_NAME") }}{{ asset(slide.fond.webPath) }});
+        min-height: 350px;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+</style>

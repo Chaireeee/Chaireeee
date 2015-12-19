@@ -1,0 +1,68 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Research list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Nameen</th>
+                <th>Concept</th>
+                <th>Concepten</th>
+                <th>Actions</th>
+                <th>Page</th>
+                <th>PageEn</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('research_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.name }}</td>
+                <td>{{ entity.nameEn }}</td>
+                <td>{{ entity.concept }}</td>
+                <td>{{ entity.conceptEn }}</td>
+                <td>
+                    {% if entity.page is not null %}
+                        <a href={{ path('generateur_edit_page',{'id':entity.page.id  }) }}> modifier page</a>
+                    {% else %}
+                        <a href="{{ path('chaire_add_page_to_reserach',{id:entity.id}) }}">
+                            Ajouter une page
+                        </a>
+                    {% endif %}
+                </td>
+                <td>
+                    {% if entity.pageEn is not null %}
+                        <a href={{ path('generateur_edit_page',{'id':entity.pageEn.id  }) }}> modifier page</a>
+                    {% else %}
+                        <a href="{{ path('chaire_add_page_to_reserachEn',{id:entity.id}) }}">
+                            Ajouter une page
+                        </a>
+                    {% endif %}
+                </td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('research_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('research_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('research_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}
+

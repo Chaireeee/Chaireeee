@@ -1,0 +1,142 @@
+<div class="row footer">
+    <div class="col-md-offset-1 col-md-10">
+
+        <div class="row pad ">
+            <div class="col-md-offset-2 col-md-8">
+                <p class="text_center" style="font-size: 24px; ">{% trans %}footer.dontmiss{% endtrans %}</p>
+
+                <form action="{{ path('add_to_mailjet') }}" method="post">
+
+                    <div class="row pad">
+
+
+                        <div class="col-lg-6" class="test">
+                            <input type="text" name="email" class="form-control" id="email" placeholder="{% trans %}footer.placeholder{% endtrans %}">
+                        </div>
+
+                        <div class="col-lg-6">
+                            <button id="send"
+                                    class="pull-right btn btn-block text_center">{#<span class="glyphicon glyphicon-eject"  aria-hidden="true"> </span>#}
+                                <span style="position:relative; bottom:4px;">Get on the ship</span></button>
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="padding-top: 15px;">
+                        <div class="form-group ">
+
+                            <div class=" col-xs-2">
+                                <input type="radio" name="who" value="1" checked>&nbsp;&nbsp; {% trans %}
+                                footer.entrepreneur{% endtrans %}
+                            </div>
+                            <div class="col-xs-2">
+                                <input type="radio" name="who" value="2" checked>&nbsp;&nbsp; {% trans %}
+                                footer.investor{% endtrans %}
+                            </div>
+                            <div class="col-xs-2">
+                                <input type="radio" name="who" value="3" checked>&nbsp;&nbsp; {% trans %}
+                                footer.student{% endtrans %}
+                            </div>
+                            <div class="col-xs-2">
+                                <input type="radio" name="who" value="4" checked>&nbsp;&nbsp; {% trans %}
+                                footer.corporate{% endtrans %}
+                            </div>
+                            <div class="col-xs-2">
+                                <input type="radio" name="who" value="5" checked>&nbsp;&nbsp; {% trans %}
+                                footer.presse{% endtrans %}
+                            </div>
+                            <div class="col-xs-2">
+                                <input type="radio" name="who" value="4" checked>&nbsp;&nbsp; {% trans %}
+                                footer.academic{% endtrans %}
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                    {#
+                    <div class="col-lg-6">
+                        <select id="select" class="form-control" >
+                            <optgroup label="Vous etes:">
+                                <option value="1">Porteur de projet</option>
+                                <option value="2">Etudiant</option>
+                                <option value="3">Investisseur</option>
+                                <option value="4">Accompagnateur</option>
+                                <option value="5">Manager</option>
+                                <option value="6">Presse</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                #}
+
+
+                </form>
+
+            </div>
+        </div>
+
+        <div class="row pad ">
+            <div class="col-md-offset-3 col-md-6">
+                <div class="row">
+                    <div class="col-lg-offset-1 col-xs-2">
+                        <a href="{% trans %}footer.facebook{% endtrans %}" target="_blank">
+                            <img class="img_center social"
+                                 src="{{ asset('bundles/chaireaccueil/images/facebook.png') }}"/>
+                            {#<img class="img_center social" src="{{ asset('public/glyphicons_social/png/social-31-facebook.png') }}"/>#}
+                        </a>
+                    </div>
+                    <div class="col-xs-2">
+                        <a href="{% trans %}footer.twitter{% endtrans %}" target="_blank">
+                            <img class="img_center social"
+                                 src="{{ asset('bundles/chaireaccueil/images/twitter.png') }}"/>
+                        </a>
+                    </div>
+                    <div class="col-xs-2">
+                        <a href="{% trans %}footer.email{% endtrans %}" target="_blank">
+                            <img class="img_center social"
+                                 src="{{ asset('bundles/chaireaccueil/images/email.png') }}"/>
+                        </a>
+                    </div>
+                    <div class="col-xs-2">
+                        <a href="{% trans %}footer.youtube{% endtrans %}" target="_blank">
+                            <img class="img_center social"
+                                 src="{{ asset('bundles/chaireaccueil/images/youtube.png') }}"/>
+                        </a>
+                    </div>
+                    <div class="col-xs-2">
+                        <a href="{% trans %}footer.medium{% endtrans %}" target="_blank">
+                            <img class="img_center social"
+                                 src="{{ asset('bundles/chaireaccueil/images/medium.png') }}"/>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="row pad ">
+            <div class="col-md-offset-2 col-md-8">
+                <p class="text_center text_footer"> {% trans %}footer.discover{% endtrans %} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+                    <a href="www.google.fr/paris" class="bold_white"> PARIS </a>-
+                    <a href="www.google.fr/paris" class="bold_white"> MADRID </a>-
+                    <a href="www.google.fr/paris" class="bold_white"> BERLIN </a>-
+                    <a href="www.google.fr/paris" class="bold_white"> LONDRES </a>-
+                    <a href="www.google.fr/paris" class="bold_white"> TURIN</a>
+                </p>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-1 col-md-10">
+                <p class="text_center">ChaireEEE 2015 - All rights reserved
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+

@@ -1,0 +1,132 @@
+
+
+{% extends '::layout.html.twig' %}
+
+{% block title %}Evenements{% endblock %}
+{% block menu %}
+    {%  include ':parts:navbar.html.twig' %}
+
+
+
+
+{% endblock %}
+
+
+
+{% block content %}
+
+    {# photo event #}
+    <div class="row pad">
+
+
+
+        {% if loc=='en' %}
+            <img id="chaireevent" class="img_center" src="{{ asset('bundles/chaireevent/images/coaching_incubation_eng.png') }}"/>
+        {% else %}
+            <img id="chaireevent" class="img_center" src="{{ asset('bundles/chaireevent/images/image_accompagnement_fr.png') }}"/>
+        {% endif %}
+
+    </div>
+
+    <div class="row pad">
+
+        <p class="text_center baselinetext">
+            {% trans %}accompagnement.text{% endtrans %}
+        </p>
+    </div>
+
+
+
+
+
+    <div class="container-fluid">
+        <div class="row pad">
+            <div class="col-md-offset-1 col-md-10">
+
+                <h4 class="text_center blue" style="font-size:25px;">{% trans %}accompagnement.title{% endtrans %}</h4>
+
+
+
+                {% for acc in accompagnement %}
+                    <div class="col-md-4" >
+
+                        {% if loc=='en' %}
+                        <h4 style="text-align:center;" class="titreitem">{{ acc.nameEn }}</h4>
+                        {% else %}
+                            <h4 style="text-align:center;" class="titreitem">{{ acc.nameLg }}</h4>
+                        {% endif %}
+
+                        {% if loc=='en' %}
+                        <a  href="{{ path('generateur_view_page',{id:acc.pageEn.id}) }}">
+                            <img style="display: block; margin-left: auto; margin-right: auto; width:300px;" src={{ asset(acc.imageentete.getWebPath()) }}>
+                        </a>
+                        {% else %}
+                            <a  href="{{ path('generateur_view_page',{id:acc.page.id}) }}">
+                                <img class="img_center" style="display: block; margin-left: auto; margin-right: auto; width:300px;" src={{ asset(acc.imageentete.getWebPath()) }}>
+                            </a>
+                        {% endif %}
+
+{#
+
+                        <p style="text-align:center;">
+
+                        </p>
+
+
+                        <p style="text-align:center;" >  <a  href="{{ path('generateur_view_page',{id:event.page.id}) }}"> En savoir plus...</a></p>
+#}
+
+
+
+                    </div>
+
+
+                {% endfor %}
+
+
+
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <style>
+
+        #chaireevent{
+            width:100%;
+        }
+
+    </style>
+
+    {#
+    <script type="text/javascript">
+        (function () {
+            if(/iPhone|iPod|Android|opera mini|blackberry|palm os|palm|hiptop|avantgo|plucker|xiino|blazer|elaine|iris|3g_t|windows ce|opera mobi|windows ce; smartphone;|windows ce;iemobile/i.test(navigator.userAgent)){
+                var question = confirm("Voulez-vous consulter la version mobile de ce site ?")
+                if (question){
+                    window.location = "http://adressedelaverisonmobile.com";
+                }
+            }
+        }());
+    </script>
+
+#}
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+

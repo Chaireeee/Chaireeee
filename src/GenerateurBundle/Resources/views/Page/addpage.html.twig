@@ -1,0 +1,64 @@
+{% extends '::layout.html.twig' %}
+{% block menu %}
+    {%  include ':parts:navbaradmin.html.twig' %}
+{% endblock %}
+
+
+{% block content %}
+
+
+    <div class="container-fluid">
+        <div style="padding-top:100px; " class="row ">
+
+            <div class="col-md-offset-4 col-md-4">
+
+                <img class="img_center"  src="http://s3.amazonaws.com/foundum-com-uploads/organization_account_image_uploads/6985/images/medium/LogoChaireEEE_newEY-04.png?1384167185"/>
+
+            </div>
+
+        </div>
+        <div class="row pad">
+
+            <div class="col-md-offset-3 col-md-6">
+                <h4 class="text_center">{% trans %}page.form.add.title{% endtrans %}</h4>
+
+                <p class="text_center">
+                    {% trans %}page.form.add.descr{% endtrans %}
+                </p>
+                <br>
+                <br>
+
+                {{ form(form) }}
+
+
+
+            </div>
+
+
+
+        </div>
+
+        <div class="row ">
+            <div class="col-md-offset-5 col-md-2">
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+

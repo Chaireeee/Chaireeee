@@ -1,0 +1,224 @@
+{% extends '::layout.html.twig' %}
+{% block menu %}
+    {%  include ':parts:navbar.html.twig' %}
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+
+
+<div class="container-fluid">
+    <div class="row pad">
+       <div class="col-md-6">
+           <img class="img_nl img_center" src="{{ asset('bundles/chaireaccueil/images/imageNL.png') }}">
+       </div>
+        <div class="col-md-6">
+            <h3 class="titres" >{% trans %}welcome.newsletter.title{% endtrans %}</h3>
+            <p class="text_news" >{% trans %}welcome.newsletter.title.desc{% endtrans %} </p>
+
+
+            <form action="{{ path('add_to_mailjet') }}" method="post">
+
+                <div class="row pad">
+                    <div class="form-group">
+                        <label  for="text" class="col-lg-4 control-label">{% trans %}welcome.newsletter.enteremail{% endtrans %} </label>
+                        <div class="col-lg-4">
+                            <input type="text" name="email" class="form-control emailnews" >
+                        </div>
+                    </div>
+                </div>
+
+<div class=" row">
+    <div class="col-lg-4">
+
+    </div>
+    <div class="col-lg-6">
+        <div class="row" style="padding-top: 15px;">
+            <div class="form-group ">
+
+                </li><div class="col-lg-12">
+                    <input  type="radio" name="who" value="1" checked>&nbsp;&nbsp; {% trans %}footer.entrepreneur{% endtrans %}
+                </div>
+
+                <div class="col-lg-12">
+                    <input  type="radio" name="who" value="2" checked>&nbsp;&nbsp; {% trans %}footer.investor{% endtrans %}
+                </div>
+                <div class="col-lg-12">
+                    <input  type="radio" name="who" value="3" checked>&nbsp;&nbsp; {% trans %}footer.student{% endtrans %}
+                </div>
+                <div class="col-lg-12">
+                    <input  type="radio" name="who" value="4" checked>&nbsp;&nbsp; {% trans %}footer.corporate{% endtrans %}
+                </div>
+                <div class="col-lg-12">
+                    <input  type="radio" name="who" value="5" checked>&nbsp;&nbsp; {% trans %}footer.presse{% endtrans %}
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+                <div class="row pad">
+
+
+                        <div class="col-lg-offset-4 col-lg-4">
+                            <button  class="button  img_center">Envoyer</button>
+                        </div>
+
+                </div>
+
+
+
+
+
+            </form>
+
+
+
+            <h3 class="titres">{% trans %}welcome.newsletter.promesse.title{% endtrans %}</h3>
+           <p class="text_news"> {% trans %}welcome.newsletter.promesse{% endtrans %}</p>
+
+        </div>
+    </div>
+</div>
+
+
+
+    {#
+     <div class="col-lg-offset-3 col-lg-6">
+
+
+
+    <form class="form-horizontal ">
+        <div class="form-group">
+            <legend style="text-align:center;">Restez connecter avec la ChairEEE</legend>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <label for="text" class="col-lg-4 control-label">Adresse e-mail : </label>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" id="email">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label for="select" class="col-lg-4 control-label">Vous etes: </label>
+                <div class="col-lg-8">
+                    <select id="select" class="form-control" >
+                        <optgroup label="Vous etes:">
+                        <option value="1">Porteur de projet</option>
+                        <option value="2">Etudiant</option>
+                        <option value="3">Investisseur</option>
+                        <option value="4">Accompagnateur</option>
+                        <option value="5">Manager</option>
+                        <option value="6">Presse</option>
+                            </optgroup>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button id="send" class="pull-right btn btn-default">Envoyer</button>
+        </div>
+    </form>
+
+        </div>
+    #}
+
+    <style>
+        .img_nl{
+            width:60%;
+        }
+
+        .titres{
+            font-size:30px;
+        }
+
+        .text_news{
+            font-size:20px;
+        }
+
+        .emailnews{
+
+            border:4px solid rgb(48,54,61);
+        }
+
+
+        .button{
+            background-color:  rgb(48,54,61);
+            border-radius:0px;
+            border: 4px solid rgb(48,54,61);
+            color:white;
+            height:40px;
+            font-size:20px;
+            padding-right:60px;
+            padding-left:60px;
+
+        }
+
+        .button:hover{
+            background-color: white;
+            border-radius:0px;
+            border: 4px solid rgb(48,54,61);
+            color:black;
+            height:40px;
+            font-size:20px;
+        }
+
+
+    </style>
+
+    <script>
+
+        function validateEmail(email) {
+            var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+            return re.test(email);
+        }
+
+
+        $('#send').click(function(){
+
+
+
+            if (validateEmail($('#email').val()))
+            {
+                alert( $('#select').val());
+            }
+
+        });
+
+
+        $.ajax({
+            type: "POST",
+            url: "https://api.mailjet.com/v3/REST/contactslist" ,
+            data: {
+                Name: "test3"
+            },
+            dataType: "json",
+            beforeSend: function (xhr) {
+                $('.waitCodePromo').removeClass('hide');
+            },
+            success: function (data) {
+                //callback(data);
+                alert('data');
+            },
+            error: function (resultat, statut, erreur) {
+                console.log("erreur");
+            }
+        });
+
+
+
+    </script>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Accompagnement list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>{% trans %}admin.accompagnement.id{% endtrans %}</th>
+                <th>{% trans %}admin.accompagnement.namenlg{% endtrans %}</th>
+                <th>{% trans %}admin.accompagnement.nameen{% endtrans %}</th>
+                <th>{% trans %}admin.accompagnement.baselinenlg{% endtrans %}</th>
+                <th>{% trans %}admin.accompagnement.baselineenglish{% endtrans %}</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('accompagnement_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.nameLg }}</td>
+                <td>{{ entity.nameEn }}</td>
+                <td>{{ entity.baselineLg }}</td>
+                <td>{{ entity.baselineEn }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('accompagnement_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('accompagnement_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('accompagnement_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

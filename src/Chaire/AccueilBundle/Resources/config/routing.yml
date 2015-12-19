@@ -1,0 +1,31 @@
+chaire_accueil_homepage:
+    path:     /
+    defaults: { _controller: ChaireAccueilBundle:Default:accueil }
+
+chaire_newsletter:
+    path:     /newsletter
+    defaults: { _controller: ChaireAccueilBundle:Newsletter:accueil }
+
+add_to_mailjet:
+    path:     /addtomailjet
+    defaults: { _controller: ChaireAccueilBundle:Newsletter:addtomailjet }
+
+set_langage_en:
+    path:     /changetoenglish/{path}
+    defaults: { _controller: ChaireAccueilBundle:Default:setlangageen }
+
+set_langage_native:
+    path:     /changetonative/{path}
+    defaults: { _controller: ChaireAccueilBundle:Default:setlangagenative }
+
+accompagnement:
+    path:     /accompagnement
+    defaults: { _controller: ChaireAccueilBundle:Default:accompagnement }
+
+add_page_to_accompagnement:
+    path:     /addpagetoaccompagnement/{id}
+    defaults: { _controller: ChaireAccueilBundle:Default:addpagetoaccompagnement }
+
+add_page_to_accompagnementEn:
+    path:     /addpagetoaccompagnementen/{id}
+    defaults: { _controller: ChaireAccueilBundle:Default:addpagetoaccompagnementEn }
