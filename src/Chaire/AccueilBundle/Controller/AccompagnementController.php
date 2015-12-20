@@ -26,7 +26,7 @@ class AccompagnementController extends Controller
     /**
      * Lists all Accompagnement entities.
      *
-     * @Route("/", name="accompagnement")
+     * @Route("/", name="accompagnements")
      * @Method("GET")
      * @Template("ChaireAccueilBundle:Accompagnement:index.html.twig")
      */

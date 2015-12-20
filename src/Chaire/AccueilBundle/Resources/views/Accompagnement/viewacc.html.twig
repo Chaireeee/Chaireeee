@@ -56,10 +56,20 @@
                             <h4 style="text-align:center;" class="titreitem">{{ acc.nameLg }}</h4>
                         {% endif %}
 
+
+
+
+
                         {% if loc=='en' %}
+                                    {% if acc.pageEn is not null %}
                         <a  href="{{ path('generateur_view_page',{id:acc.pageEn.id}) }}">
                             <img style="display: block; margin-left: auto; margin-right: auto; width:300px;" src={{ asset(acc.imageentete.getWebPath()) }}>
                         </a>
+                                    {% else %}
+                                        <a  href="{{ path('generateur_view_page',{id:acc.page.id}) }}">
+                                            <img class="img_center" style="display: block; margin-left: auto; margin-right: auto; width:300px;" src={{ asset(acc.imageentete.getWebPath()) }}>
+                                        </a>
+                                    {% endif %}
                         {% else %}
                             <a  href="{{ path('generateur_view_page',{id:acc.page.id}) }}">
                                 <img class="img_center" style="display: block; margin-left: auto; margin-right: auto; width:300px;" src={{ asset(acc.imageentete.getWebPath()) }}>

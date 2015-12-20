@@ -60,12 +60,12 @@
 
 
                 <div class="text_center">
-                    <img style="display:inline;" src="{{ asset('bundles/chaireaccueil/images/tiret.png') }}"/>
+                    <img style="width:60px; display:inline;" src="{{ asset('bundles/chaireaccueil/images/tiret.png') }}"/>
 
                     <span style="" class="text_center">
                     {% trans %}welcome.ourActivities{% endtrans %}
                     </span>
-                    <img style="display:inline;" src="{{ asset('bundles/chaireaccueil/images/tiret.png') }}"/>
+                    <img style="width:60px; display:inline;" src="{{ asset('bundles/chaireaccueil/images/tiret.png') }}"/>
 
                 </div>
             </div>
@@ -92,9 +92,7 @@
             text-decoration: none;
         }
 
-        .bigfour:hover{
-            background-color: lightgrey;
-        }
+
 
 
     </style>
@@ -104,7 +102,7 @@
 
             <div class="col-md-offset-3 col-md-6 firstpage">
                 <div class="row">
-                    <div class=" col-md-6 bigfour">
+                    <div class=" col-md-6 " id="event">
                         <a href="{{ path('chaire_event_homepage') }}">
                         <img class="img_center activite"
                              src="{{ asset('bundles/chaireaccueil/images/evenement.png') }}"/>
@@ -112,7 +110,7 @@
                         </a>
 
                     </div>
-                    <div class=" col-md-6 bigfour">
+                    <div class=" col-md-6" id="formation">
                         <a href="{{ path('chaire_formation_homepage') }}">
                         <img class="img_center activite"
                              src="{{ asset('bundles/chaireaccueil/images/formation.png') }}"/>
@@ -120,7 +118,7 @@
                         </a>
 
                     </div>
-                    <div class=" col-md-6 bigfour">
+                    <div class=" col-md-6 " id="accompagnement">
                         <a href="{{ path('accompagnement') }}">
                         <img class="img_center activite"
                              src="{{ asset('bundles/chaireaccueil/images/accompagenement.png') }}"/>
@@ -128,9 +126,9 @@
                         </a>
 
                     </div>
-                    <div class=" col-md-6 bigfour">
+                    <div class=" col-md-6 " id="recherche">
                         <a href="">
-                        <img class="img_center activite"
+                        <img class="img_center activite "
                              src="{{ asset('bundles/chaireaccueil/images/recherche.png') }}"/>
                             <h3 class="text_center">{% trans %}welcome.recherche{% endtrans %}</h3>
                         </a>
@@ -140,18 +138,31 @@
 
         </div>
 
+    <script>
+
+        $('#event').hover(
+          function(){
+              console.log('salut');
+         //   $('#event').attr(src,'{{ asset('bundles/chaireaccueil/images/evenement2.png') }}');
+        },function(){
+           //         $('#event').attr(src,'{{ asset('bundles/chaireaccueil/images/evenement1.png') }}');
+                }
+        );
+
+    </script>
+
         {# En ce moment titre #}
     <div class="row pad">
         <div class="col-md-offset-4 col-md-4 titlefp">
 
 
             <div class="text_center">
-                <img style="display:inline;" src="{{ asset('bundles/chaireaccueil/images/tiret.png') }}"/>
+                <img style="width:60px; display:inline;" src="{{ asset('bundles/chaireaccueil/images/tiret.png') }}"/>
 
                     <span style="" class="text_center">
                     {% trans %}welcome.now{% endtrans %}
                     </span>
-                <img style="display:inline;" src="{{ asset('bundles/chaireaccueil/images/tiret.png') }}"/>
+                <img style="width:60px; display:inline;" src="{{ asset('bundles/chaireaccueil/images/tiret.png') }}"/>
 
             </div>
         </div>

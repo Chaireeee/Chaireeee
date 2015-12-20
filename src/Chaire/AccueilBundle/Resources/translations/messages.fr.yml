@@ -58,10 +58,10 @@ admin.accompagnement.modifypageen : modifier page Anglais
 accompagnement.title: Nos offres d'accompagnement
 accompagnement.text: salut
 
-welcome.event: Evenement
-welcome.acc: Accompagnement
-welcome.recherche: Recherche
-welcome.formation: Formation
+welcome.event: EVENEMENT
+welcome.acc: ACCOMPAGNEMENT
+welcome.recherche: RECHERCHE
+welcome.formation: FORMATION
 
 
 index.event.add: Ajouter un evenement

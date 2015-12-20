@@ -4,6 +4,7 @@ app/config/parameters.yml
 vendor
 app/bootstrap.php.cache
 #web/bundles/
+web/uploads
 app/cache/*
 app/logs/*
 build/
