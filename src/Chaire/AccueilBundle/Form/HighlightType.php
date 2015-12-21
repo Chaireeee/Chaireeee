@@ -18,8 +18,8 @@ class HighlightType extends AbstractType
             ->add('title')
             ->add('baseLine')
             ->add('link')
-            ->add('filephoto', 'file')
-            ->add('activated')
+            ->add('filephoto', 'file', array('required' => false))
+            ->add('activated',null, array('required' => false))
         ;
     }
     

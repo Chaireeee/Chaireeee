@@ -131,13 +131,8 @@ a:focus,a:hover{
 
 /* page d accueil   */
 
-#youtube{
-    width:45vh;
-    position:absolute;
-    margin-left:38% ;
-    top:35%;
-}
 
+/*
 @media (max-width: 992px) {
     #youtube{
         width:25vh;
@@ -145,7 +140,7 @@ a:focus,a:hover{
         margin-left:40% ;
         top:30%;
     }
-}
+}*/
 
 #youtube:hover{
 
@@ -167,10 +162,7 @@ a:focus,a:hover{
     margin-right: auto;
 }
 
-.highlight_img{
-    padding:10px;
-    height: 25%;
-}
+
 
 .activite{
     padding-top:33px;

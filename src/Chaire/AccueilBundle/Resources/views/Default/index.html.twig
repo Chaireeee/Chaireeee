@@ -35,11 +35,48 @@
         </div>
         {% endfor %}
         {# video manifesto #}
-        <div   class="row pad">
+        <style>
+            #youtube{
+                /*width:45vh;
+             /*   position:absolute;
+                margin-left:38% ;
+                top:35%;*/
+                width:45vh;
+                position:relative;
+                top:15vw;
+                z-index:1;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
 
-                <div style="position:relative;">
-            <img id="manifesto" class="img_center" src="{{ asset('bundles/chaireaccueil/images/image_video_manifesto.jpg') }}"/>
-                </div>
+            }
+
+            #video_manifesto{
+
+
+                padding:0px;
+                margin:0px;
+                border:0px;
+
+                min-height:35vw;
+                /*width:100vw;*/
+
+                /*background: url ('{{ app.request.server.get('SERVER_NAME') }}{{ asset('bundles/chaireaccueil/images/image_video_manifesto.jpg') }}') ;
+                */
+                background-repeat: no-repeat;
+                /*background-position: center;*/
+
+                background: url('http://localhost:8888/chaireeee/web/bundles/chaireaccueil/images/image_video_manifesto.jpg');
+                -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+                background-size: cover; /* version standardisée */
+            }
+        </style>
+        </div>
+        <div  id="video_manifesto"  class="pad" >
+
+
+
+
 
 
             <img id="youtube"  data-toggle="modal" data-target="#myModal"  src="{{ asset('bundles/chaireaccueil/images/PLAY_BUTTON.png') }}"/>
@@ -48,6 +85,7 @@
 
 
         </div>
+    <div class="container-fluid">
 
     <br>
 
@@ -102,33 +140,33 @@
 
             <div class="col-md-offset-3 col-md-6 firstpage">
                 <div class="row">
-                    <div class=" col-md-6 " id="event">
+                    <div class=" col-md-6 " >
                         <a href="{{ path('chaire_event_homepage') }}">
-                        <img class="img_center activite"
+                        <img class="img_center activite" id="events"
                              src="{{ asset('bundles/chaireaccueil/images/evenement.png') }}"/>
                             <h3 class="text_center">{% trans %}welcome.event{% endtrans %}</h3>
                         </a>
 
                     </div>
-                    <div class=" col-md-6" id="formation">
+                    <div class=" col-md-6" >
                         <a href="{{ path('chaire_formation_homepage') }}">
-                        <img class="img_center activite"
+                        <img class="img_center activite" id="formations"
                              src="{{ asset('bundles/chaireaccueil/images/formation.png') }}"/>
                             <h3 class="text_center">{% trans %}welcome.formation{% endtrans %}</h3>
                         </a>
 
                     </div>
-                    <div class=" col-md-6 " id="accompagnement">
+                    <div class=" col-md-6 " >
                         <a href="{{ path('accompagnement') }}">
-                        <img class="img_center activite"
+                        <img class="img_center activite"  id="accompagnements"
                              src="{{ asset('bundles/chaireaccueil/images/accompagenement.png') }}"/>
                             <h3 class="text_center">{% trans %}welcome.acc{% endtrans %}</h3>
                         </a>
 
                     </div>
-                    <div class=" col-md-6 " id="recherche">
+                    <div class=" col-md-6 " >
                         <a href="">
-                        <img class="img_center activite "
+                        <img class="img_center activite "  id="recherches"
                              src="{{ asset('bundles/chaireaccueil/images/recherche.png') }}"/>
                             <h3 class="text_center">{% trans %}welcome.recherche{% endtrans %}</h3>
                         </a>
@@ -136,18 +174,46 @@
                 </div>
             </div>
 
+            <script>
+
+                $('#events').hover(
+                        function(){
+                            $('#events').attr('src','{{ asset('bundles/chaireaccueil/images/evenement2.png') }}');
+                        },function(){
+                            $('#events').attr('src','{{ asset('bundles/chaireaccueil/images/evenement.png') }}');
+                        }
+                );
+
+                $('#formations').hover(
+                        function(){
+                            $('#formations').attr('src','{{ asset('bundles/chaireaccueil/images/formation2.png') }}');
+                        },function(){
+                            $('#formations').attr('src','{{ asset('bundles/chaireaccueil/images/formation.png') }}');
+                        }
+                );
+
+                $('#accompagnements').hover(
+                        function(){
+                            $('#accompagnements').attr('src','{{ asset('bundles/chaireaccueil/images/accompagenement2.png') }}');
+                        },function(){
+                            $('#accompagnements').attr('src','{{ asset('bundles/chaireaccueil/images/accompagenement.png') }}');
+                        }
+                );
+
+                $('#recherches').hover(
+                        function(){
+                            $('#recherches').attr('src','{{ asset('bundles/chaireaccueil/images/recherche2.png') }}');
+                        },function(){
+                            $('#recherches').attr('src','{{ asset('bundles/chaireaccueil/images/recherche.png') }}');
+                        }
+                );
+            </script>
+
         </div>
 
     <script>
 
-        $('#event').hover(
-          function(){
-              console.log('salut');
-         //   $('#event').attr(src,'{{ asset('bundles/chaireaccueil/images/evenement2.png') }}');
-        },function(){
-           //         $('#event').attr(src,'{{ asset('bundles/chaireaccueil/images/evenement1.png') }}');
-                }
-        );
+
 
     </script>
 
@@ -189,6 +255,15 @@
 
 
 
+<style>
+    .highlight_img{
+        padding:10px;
+
+        max-width: 22vw;
+        /*height: 25%;*/
+
+    }
+</style>
 
 
 
@@ -249,6 +324,9 @@
         $('#close_video').click(function(){
              $('#video_youtube').attr('src','');
 } );
+
+
+
 
     </script>
 
